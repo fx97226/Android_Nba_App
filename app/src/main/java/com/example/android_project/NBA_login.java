@@ -18,4 +18,8 @@ public class NBA_login extends AppCompatActivity {
     public void btn_register(View view) {
         startActivity(new Intent(getApplicationContext(),NBA_Register.class));
     }
+
+    public void btn_login(View view) {
+        startActivity(new Intent(getApplicationContext(),NBA_Home.class));
+    }
 }
