@@ -1,14 +1,16 @@
 package com.example.android_project.asynctasks;
 
-import android.net.http.HttpResponseCache;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+
 import org.json.JSONObject;
-import com.loopj.android.http.*;
+
 import cz.msebera.android.httpclient.Header;
 
-public class AsyncGetSpecificPlayer extends AsyncTask<String, Void, JSONObject> {
+public class AsyncGetSpecificTeam extends AsyncTask<String, Void, JSONObject> {
 
     @Override
     protected JSONObject doInBackground(String... strings) {
@@ -40,6 +42,7 @@ public class AsyncGetSpecificPlayer extends AsyncTask<String, Void, JSONObject> 
     protected void onPostExecute(JSONObject jsonObject) {
         Log.i("ASYNC", jsonObject.toString());
     }
+
     protected String buildUrl(String[] strings){
         StringBuilder url = new StringBuilder();
         url.append("https://free-nba.p.rapidapi.com/teams/").append(strings[0]);
