@@ -54,14 +54,16 @@
             android:textSize="22sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <android.widget.Button
         android:id="@+id/Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_round"
         android:layout_marginTop="30dp"
-        android:textColor="@color/white"
+        android:background="@drawable/button_round"
+        android:onClick="btn_login"
         android:text="Login"
+        android:textColor="@color/white"
         android:textSize="20sp" />
     <android.widget.Button
         android:id="@+id/register_log"
