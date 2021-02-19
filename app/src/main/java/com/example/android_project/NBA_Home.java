@@ -32,25 +32,22 @@ public class NBA_Home extends AppCompatActivity {
 
         bottomNavigationView.setSelectedItemId(R.id.home_id);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id= item.getItemId();
-                if(intDq.contains(id)){
-                    if(id== R.id.home_id){
-                        if (intDq.size()!=1){
-                            if (flag){
-                                intDq.addFirst(R.id.home_id);
-                                flag=false;
-                            }
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            int id= item.getItemId();
+            if(intDq.contains(id)){
+                if(id== R.id.home_id){
+                    if (intDq.size()!=1){
+                        if (flag){
+                            intDq.addFirst(R.id.home_id);
+                            flag=false;
                         }
                     }
-                    intDq.remove(id);
                 }
-                intDq.push(id);
-                loadFragment(getFragment(item.getItemId()));
-                return true;
+                intDq.remove(id);
             }
+            intDq.push(id);
+            loadFragment(getFragment(item.getItemId()));
+            return true;
         });
     }
 
