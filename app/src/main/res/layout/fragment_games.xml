@@ -98,14 +98,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Date"
-                                android:layout_marginHorizontal="40dp"
+                                android:layout_marginHorizontal="60dp"
 
                                 />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Hour"
-                                android:layout_marginHorizontal="40dp"
+                                android:layout_marginHorizontal="60dp"
                                 />
                         </LinearLayout>
 
@@ -209,14 +209,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Date"
-                                android:layout_marginHorizontal="40dp"
+                                android:layout_marginHorizontal="60dp"
 
                                 />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Hour"
-                                android:layout_marginHorizontal="40dp"
+                                android:layout_marginHorizontal="60dp"
                                 />
                         </LinearLayout>
 
@@ -320,14 +320,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Date"
-                                android:layout_marginHorizontal="40dp"
+                                android:layout_marginHorizontal="60dp"
 
                                 />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Hour"
-                                android:layout_marginHorizontal="40dp"
+                                android:layout_marginHorizontal="60dp"
                                 />
                         </LinearLayout>
 
@@ -431,14 +431,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Date"
-                                android:layout_marginHorizontal="40dp"
+                                android:layout_marginHorizontal="60dp"
 
                                 />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Hour"
-                                android:layout_marginHorizontal="40dp"
+                                android:layout_marginHorizontal="60dp"
                                 />
                         </LinearLayout>
 
@@ -542,14 +542,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Date"
-                                android:layout_marginHorizontal="40dp"
+                                android:layout_marginHorizontal="60dp"
 
                                 />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Hour"
-                                android:layout_marginHorizontal="40dp"
+                                android:layout_marginHorizontal="60dp"
                                 />
                         </LinearLayout>
 
