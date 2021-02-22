@@ -9,7 +9,6 @@ import com.loopj.android.http.*;
 import cz.msebera.android.httpclient.Header;
 
 public class AsyncGetSpecificPlayer extends AsyncTask<String, Void, JSONObject> {
-
     @Override
     protected JSONObject doInBackground(String... strings) {
         final JSONObject[] response = {null};
@@ -41,8 +40,6 @@ public class AsyncGetSpecificPlayer extends AsyncTask<String, Void, JSONObject> 
         Log.i("ASYNC", jsonObject.toString());
     }
     protected String buildUrl(String[] strings){
-        StringBuilder url = new StringBuilder();
-        url.append("https://free-nba.p.rapidapi.com/teams/").append(strings[0]);
-        return url.toString();
+        return "https://free-nba.p.rapidapi.com/players/" + strings[0];
     }
 }

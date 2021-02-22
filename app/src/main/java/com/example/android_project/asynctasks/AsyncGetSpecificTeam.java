@@ -44,8 +44,6 @@ public class AsyncGetSpecificTeam extends AsyncTask<String, Void, JSONObject> {
     }
 
     protected String buildUrl(String[] strings){
-        StringBuilder url = new StringBuilder();
-        url.append("https://free-nba.p.rapidapi.com/teams/").append(strings[0]);
-        return url.toString();
+        return "https://free-nba.p.rapidapi.com/teams/" + strings[0];
     }
 }

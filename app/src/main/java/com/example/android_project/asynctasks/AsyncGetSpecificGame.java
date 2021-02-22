@@ -35,7 +35,7 @@ public class AsyncGetSpecificGame extends AsyncTask<String, Void, JSONObject> {
                 return false;
             }
         });
-        while(response[0]==null);
+        while(response[0]==null); // We wait for response
         return response[0];
     }
 
@@ -45,8 +45,6 @@ public class AsyncGetSpecificGame extends AsyncTask<String, Void, JSONObject> {
     }
 
     protected String buildUrl(String[] strings){
-        StringBuilder url = new StringBuilder();
-        url.append("https://free-nba.p.rapidapi.com/games/").append(strings[0]);
-        return url.toString();
+        return "https://free-nba.p.rapidapi.com/games/" + strings[0];
     }
 }
