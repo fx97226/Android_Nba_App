@@ -28,7 +28,7 @@ public class NBA_login extends AppCompatActivity {
     }
 
     public void btn_login(View view){
-
+      startActivity(new Intent(getApplicationContext(),NBA_Home.class));
 
         AsyncTask<String, Void, JSONObject> task = new AsyncGetSpecificGame();
         task.execute("9");
