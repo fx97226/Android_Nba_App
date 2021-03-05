@@ -238,11 +238,12 @@
 
         <ScrollView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
+
             <HorizontalScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -250,52 +251,55 @@
 
                     <TextView
                         android:layout_width="70dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/ic_icon"
+                        android:layout_height="wrap_content"
                         android:layout_marginHorizontal="25dp"
-                        android:layout_height="wrap_content">
-                    </TextView>
+                        android:layout_weight="1"
+                        android:background="@drawable/ic_icon"></TextView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="25dp"
                         android:layout_gravity="center"
+                        android:layout_marginHorizontal="25dp"
                         android:layout_weight="1"
                         android:text="Virat Kohli"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center" />
+
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_gravity="center"
+                        android:layout_marginHorizontal="25dp"
+                        android:layout_weight="1"
                         android:text="IND"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center" />
+
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_gravity="center"
+                        android:layout_marginHorizontal="25dp"
+                        android:layout_weight="1"
                         android:text="895"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center" />
+
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_gravity="center"
+                        android:layout_marginHorizontal="25dp"
+                        android:layout_weight="1"
                         android:text="895"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center" />
+
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_gravity="center"
+                        android:layout_marginHorizontal="25dp"
+                        android:layout_weight="1"
                         android:text="895"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center" />
 
                 </LinearLayout>
             </HorizontalScrollView>
