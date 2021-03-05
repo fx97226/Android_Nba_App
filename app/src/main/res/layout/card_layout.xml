@@ -8,6 +8,7 @@
     tools:context=".TeamFragment">
 
     <LinearLayout
+        android:paddingHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -16,11 +17,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="30dp"
+            android:paddingHorizontal="20dp"
             app:cardCornerRadius="10dp">
 
             <LinearLayout
-                android:layout_width="392dp"
-
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="30dp">
@@ -48,9 +50,10 @@
                             android:id="@+id/name_team1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textAlignment="center"
                             android:text="Team1"
                             android:textColor="@color/black"
-                            android:textSize="20dp"
+                            android:autoSizeTextType="uniform"
                             android:textStyle="bold" />
 
                         <TextView
@@ -72,7 +75,7 @@
                             android:id="@+id/card_date"
                             android:layout_width="wrap_content"
                             android:layout_height="60dp"
-                            android:layout_marginHorizontal="60dp"
+                            android:layout_marginHorizontal="30dp"
 
                             android:text="Date" />
 
@@ -96,8 +99,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Team2"
+                            android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="20dp"
+                            android:autoSizeTextType="uniform"
                             android:textStyle="bold" />
 
                         <TextView
