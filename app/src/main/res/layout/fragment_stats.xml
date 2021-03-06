@@ -1,614 +1,471 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StatsFragment">
 
-    <TableRow
-        android:background="@color/ButtonColor"
-        android:paddingVertical="20dp">
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF" >
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF" >
+
+            <TableLayout
+                android:id="@+id/tblData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                 >
+                <TableRow
+                    android:paddingVertical="15dp"
+                    android:background="@color/ButtonColor"
+                    >
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:layout_marginHorizontal="20dp"
+                                android:text="Stat 1"
+                                android:gravity="center_horizontal"
+                                android:layout_height="wrap_content">
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:layout_marginHorizontal="20dp"
+                                android:text="Stat 1"
+                                android:gravity="center_horizontal"
+                                android:layout_height="wrap_content">
+                            </TextView>
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:layout_marginHorizontal="20dp"
+                                android:text="Stat 1"
+                                android:gravity="center_horizontal"
+                                android:layout_height="wrap_content">
+                            </TextView>
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:layout_marginHorizontal="20dp"
+                                android:text="Stat 1"
+                                android:gravity="center_horizontal"
+                                android:layout_height="wrap_content">
+                            </TextView>
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:layout_marginHorizontal="20dp"
+                                android:text="Stat 1"
+                                android:gravity="center_horizontal"
+                                android:layout_height="wrap_content">
+                            </TextView>
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:layout_marginHorizontal="20dp"
+                                android:text="Stat 1"
+                                android:gravity="center_horizontal"
+                                android:layout_height="wrap_content">
+                            </TextView>
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:layout_marginHorizontal="20dp"
+                                android:text="Stat 1"
+                                android:gravity="center_horizontal"
+                                android:layout_height="wrap_content">
+                            </TextView>
+                </TableRow>
+                <TableRow
+                    android:background="#E1E1E1"
+                    android:paddingVertical="5dp"
+                    android:gravity="center"
+                    >
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_marginHorizontal="20dp"
+                        android:background="@drawable/ic_icon"
+                        android:layout_height="wrap_content">
+                    </TextView>
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginHorizontal="20dp"
+                        android:text="Virat Kohli"
+                       />
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_height="wrap_content"
+                        android:text="IND"
+                       />
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_marginHorizontal="20dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:text="895"
+                        android:textAlignment="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_marginHorizontal="20dp"
-                        android:text="Stats 1"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
+
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:text="895"
+                        android:textAlignment="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:text="895"
+                        android:textAlignment="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_height="wrap_content"
+                        android:text="895"
+                        android:textAlignment="center"/>
+                </TableRow>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#808080"/>
+                <TableRow
+                    android:background="#E1E1E1"
+                    android:paddingVertical="5dp"
+                    android:gravity="center"
+                    >
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_marginHorizontal="20dp"
+                        android:background="@drawable/ic_icon"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginHorizontal="20dp"
+                        android:text="Virat Kohli"
                         />
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_width="fill_parent"
                         android:layout_marginHorizontal="20dp"
-                        android:text="Stats 1"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
-                        android:textAlignment="center"/>
-                    <TextView
-                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Stats 1"
+                        android:text="IND"
+                        />
+                    <TextView
+                        android:layout_width="fill_parent"
                         android:layout_marginHorizontal="20dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="895"
                         android:textAlignment="center"/>
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Stats 1"
                         android:layout_marginHorizontal="20dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
+
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:text="895"
                         android:textAlignment="center"/>
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Stats 1"
                         android:layout_marginHorizontal="20dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
+
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:text="895"
                         android:textAlignment="center"/>
                     <TextView
                         android:layout_width="wrap_content"
+                        android:layout_marginHorizontal="20dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Stats 1"
-                        android:layout_marginHorizontal="25dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
+                        android:text="895"
                         android:textAlignment="center"/>
-
-                </LinearLayout>
-
-            </HorizontalScrollView>
-        </ScrollView>
-    </TableRow>
-    <TableRow
-        android:background="#E1E1E1"
-        android:padding="5dp"
-        android:gravity="center">
-
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
+                </TableRow>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#808080"/>
+                <TableRow
+                    android:background="#E1E1E1"
+                    android:paddingVertical="5dp"
+                    android:gravity="center"
+                    >
                     <TextView
-                        android:layout_width="70dp"
-                        android:layout_weight="1"
+                        android:layout_width="fill_parent"
+                        android:layout_marginHorizontal="20dp"
                         android:background="@drawable/ic_icon"
-                        android:layout_marginHorizontal="25dp"
                         android:layout_height="wrap_content">
                     </TextView>
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
+
+                        android:layout_marginHorizontal="20dp"
                         android:text="Virat Kohli"
-                        android:textAlignment="center"/>
+                        />
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
+                        android:layout_width="fill_parent"
+                        android:layout_marginHorizontal="20dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
                         android:text="IND"
-                        android:textAlignment="center"/>
+                        />
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
+                        android:layout_width="fill_parent"
+                        android:layout_marginHorizontal="20dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_gravity="center"
                         android:text="895"
                         android:textAlignment="center"/>
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
+                        android:layout_marginHorizontal="20dp"
+
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_gravity="center"
+
                         android:text="895"
                         android:textAlignment="center"/>
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
+                        android:layout_marginHorizontal="20dp"
+
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_gravity="center"
+
                         android:text="895"
                         android:textAlignment="center"/>
-
-                </LinearLayout>
-            </HorizontalScrollView>
-        </ScrollView>
-
-    </TableRow>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#808080"/>
-    <TableRow
-        android:background="@color/white"
-        android:padding="5dp"
-        android:gravity="center">
-
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
                     <TextView
-                        android:layout_width="70dp"
-                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_height="wrap_content"
+                        android:text="895"
+                        android:textAlignment="center"/>
+                </TableRow>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#808080"/>
+                <TableRow
+                    android:background="#E1E1E1"
+                    android:paddingVertical="5dp"
+                    android:gravity="center"
+                    >
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_marginHorizontal="20dp"
                         android:background="@drawable/ic_icon"
-                        android:layout_marginHorizontal="25dp"
                         android:layout_height="wrap_content">
                     </TextView>
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
+
+                        android:layout_marginHorizontal="20dp"
                         android:text="Virat Kohli"
-                        android:textAlignment="center"/>
+                        />
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
+                        android:layout_width="fill_parent"
+                        android:layout_marginHorizontal="20dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
                         android:text="IND"
-                        android:textAlignment="center"/>
+                        />
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
+                        android:layout_width="fill_parent"
+                        android:layout_marginHorizontal="20dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_gravity="center"
                         android:text="895"
                         android:textAlignment="center"/>
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
+                        android:layout_marginHorizontal="20dp"
+
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_gravity="center"
+
                         android:text="895"
                         android:textAlignment="center"/>
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
+                        android:layout_marginHorizontal="20dp"
+
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_gravity="center"
+
                         android:text="895"
                         android:textAlignment="center"/>
-
-                </LinearLayout>
-            </HorizontalScrollView>
-        </ScrollView>
-
-    </TableRow>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#808080"/>
-    <TableRow
-        android:background="#E1E1E1"
-        android:padding="5dp"
-        android:gravity="center">
-
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/ic_icon"></TextView>
-
                     <TextView
                         android:layout_width="wrap_content"
+                        android:layout_marginHorizontal="20dp"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_weight="1"
-                        android:text="Virat Kohli"
-                        android:textAlignment="center" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_weight="1"
-                        android:text="IND"
-                        android:textAlignment="center" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_weight="1"
                         android:text="895"
-                        android:textAlignment="center" />
-
+                        android:textAlignment="center"/>
+                </TableRow>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#808080"/>
+                <TableRow
+                    android:background="#E1E1E1"
+                    android:paddingVertical="5dp"
+                    android:gravity="center"
+                    >
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_weight="1"
-                        android:text="895"
-                        android:textAlignment="center" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_weight="1"
-                        android:text="895"
-                        android:textAlignment="center" />
-
-                </LinearLayout>
-            </HorizontalScrollView>
-        </ScrollView>
-
-    </TableRow>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#808080"/>
-    <TableRow
-        android:background="@color/white"
-        android:padding="5dp"
-        android:gravity="center">
-
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="70dp"
-                        android:layout_weight="1"
+                        android:layout_width="fill_parent"
+                        android:layout_marginHorizontal="20dp"
                         android:background="@drawable/ic_icon"
-                        android:layout_marginHorizontal="25dp"
                         android:layout_height="wrap_content">
                     </TextView>
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
+
+                        android:layout_marginHorizontal="20dp"
                         android:text="Virat Kohli"
-                        android:textAlignment="center"/>
+                        />
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
+                        android:layout_width="fill_parent"
+                        android:layout_marginHorizontal="20dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
                         android:text="IND"
-                        android:textAlignment="center"/>
+                        />
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
+                        android:layout_width="fill_parent"
+                        android:layout_marginHorizontal="20dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_gravity="center"
                         android:text="895"
                         android:textAlignment="center"/>
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
+                        android:layout_marginHorizontal="20dp"
+
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_gravity="center"
+
                         android:text="895"
                         android:textAlignment="center"/>
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
+                        android:layout_marginHorizontal="20dp"
+
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_gravity="center"
+
                         android:text="895"
                         android:textAlignment="center"/>
-
-                </LinearLayout>
-            </HorizontalScrollView>
-        </ScrollView>
-
-    </TableRow>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#808080"/>
-    <TableRow
-        android:background="#E1E1E1"
-        android:padding="5dp"
-        android:gravity="center">
-
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
                     <TextView
-                        android:layout_width="70dp"
-                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_height="wrap_content"
+                        android:text="895"
+                        android:textAlignment="center"/>
+                </TableRow>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#808080"/>
+                <TableRow
+                    android:background="#E1E1E1"
+                    android:paddingVertical="5dp"
+                    android:gravity="center"
+                    >
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_marginHorizontal="20dp"
                         android:background="@drawable/ic_icon"
-                        android:layout_marginHorizontal="25dp"
                         android:layout_height="wrap_content">
                     </TextView>
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
+
+                        android:layout_marginHorizontal="20dp"
                         android:text="Virat Kohli"
-                        android:textAlignment="center"/>
+                        />
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
+                        android:layout_width="fill_parent"
+                        android:layout_marginHorizontal="20dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
                         android:text="IND"
-                        android:textAlignment="center"/>
+                        />
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
+                        android:layout_width="fill_parent"
+                        android:layout_marginHorizontal="20dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_gravity="center"
                         android:text="895"
                         android:textAlignment="center"/>
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
+                        android:layout_marginHorizontal="20dp"
+
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_gravity="center"
+
                         android:text="895"
                         android:textAlignment="center"/>
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
+                        android:layout_marginHorizontal="20dp"
+
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:text="895"
-                        android:textAlignment="center"/>
 
-                </LinearLayout>
-            </HorizontalScrollView>
-        </ScrollView>
-
-    </TableRow>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#808080"/>
-    <TableRow
-        android:background="@color/white"
-        android:padding="5dp"
-        android:gravity="center">
-
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="70dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/ic_icon"
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_height="wrap_content">
-                    </TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:text="Virat Kohli"
-                        android:textAlignment="center"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:text="IND"
-                        android:textAlignment="center"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
                         android:text="895"
                         android:textAlignment="center"/>
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
+                        android:layout_marginHorizontal="20dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
                         android:text="895"
                         android:textAlignment="center"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:text="895"
-                        android:textAlignment="center"/>
+                </TableRow>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#808080"/>
 
-                </LinearLayout>
-            </HorizontalScrollView>
-        </ScrollView>
 
-    </TableRow>
+            </TableLayout>
+        </HorizontalScrollView>
+    </ScrollView>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#808080"/>
-    <TableRow
-        android:background="#E1E1E1"
-        android:padding="5dp"
-        android:gravity="center">
 
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="70dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/ic_icon"
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_height="wrap_content">
-                    </TextView>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:text="Virat Kohli"
-                        android:textAlignment="center"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:text="IND"
-                        android:textAlignment="center"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:text="895"
-                        android:textAlignment="center"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:text="895"
-                        android:textAlignment="center"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_marginHorizontal="25dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:text="895"
-                        android:textAlignment="center"/>
 
-                </LinearLayout>
-            </HorizontalScrollView>
-        </ScrollView>
 
-    </TableRow>
-
-</TableLayout>
+</RelativeLayout>
