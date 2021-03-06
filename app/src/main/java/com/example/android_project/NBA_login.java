@@ -24,16 +24,10 @@ public class NBA_login extends AppCompatActivity {
     }
 
     public void btn_register(View view) {
-        startActivity(new Intent(getApplicationContext(),NBA_Register.class));
+        startActivity(new Intent(getApplicationContext(), NBA_Register.class));
     }
 
-    public void btn_login(View view){
-        AsyncTask<String, Void, JSONObject> task = new AsyncGetSpecificGame();
-        task.execute("9");
-        AsyncTask<String, Void, JSONObject> task2 = new AsyncGetSpecificPlayer();
-        task2.execute("10");
-        AsyncTask<String, Void, JSONObject> task3 = new AsyncGetSpecificTeam();
-        task3.execute("11");
-        startActivity(new Intent(getApplicationContext(),NBA_Home.class));
+    public void btn_login(View view) {
+        startActivity(new Intent(getApplicationContext(), NBA_Home.class));
     }
 }
