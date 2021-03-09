@@ -17,7 +17,10 @@ import cz.msebera.android.httpclient.Header;
 
 public class AsyncGetSpecific extends AsyncTask<String, Void, JSONObject> {
     private final Games_Adapter adapter;
-    public AsyncGetSpecific(Games_Adapter adapter){ this.adapter = adapter;}
+
+    public AsyncGetSpecific(Games_Adapter adapter) {
+        this.adapter = adapter;
+    }
 
     @Override
     protected JSONObject doInBackground(String... strings) {
@@ -26,7 +29,7 @@ public class AsyncGetSpecific extends AsyncTask<String, Void, JSONObject> {
             AsyncHttpClient client = new AsyncHttpClient();
             client.addHeader("x-rapidapi-key", "987a652a7cmshb9247e1fe068886p1ef584jsn4df5ed246ff7");
             client.addHeader("x-rapidapi-host", "free-nba.p.rapidapi.com");
-            for(int i = 0 ; i < 10 ; i++){
+            for (int i = 0; i < 10; i++) {
                 String url = buildUrl(strings);
                 client.get(url, new JsonHttpResponseHandler() {
                     public void onSuccess(int statusCode, Header[] headers, JSONObject json) {
@@ -57,19 +60,18 @@ public class AsyncGetSpecific extends AsyncTask<String, Void, JSONObject> {
     protected void onPostExecute(JSONObject jsonObject) {
         Log.i("ASYNC", jsonObject.toString());
 
-        try{
+        try {
             JSONArray data = jsonObject.getJSONArray("data");
-            for (int i = 0; i<data.length(); i++){
+            for (int i = 0; i < data.length(); i++) {
                 adapter.add(data.getJSONObject(i));
                 adapter.notifyDataSetChanged();
-                Log.i("ASYNC",  "Dans le postExecute : " +  data.getJSONObject(i));
             }
-        }catch (JSONException e){
+        } catch (JSONException e) {
             e.printStackTrace();
         }
     }
 
     protected String buildUrl(String[] strings) {
-        return "https://free-nba.p.rapidapi.com/"+ strings[0] + "?page=0&per_page=10&date=2020-03-04";
+        return "https://free-nba.p.rapidapi.com/" + strings[0] + "?page=0&per_page=10&date=2020-03-04";
     }
 }
