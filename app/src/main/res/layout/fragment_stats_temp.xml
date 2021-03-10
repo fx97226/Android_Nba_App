@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StatsFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF" >
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF" >
+
+            <TableLayout
+                android:id="@+id/tblData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                >
+                <TableRow
+                    android:paddingVertical="15dp"
+                    android:background="@color/ButtonColor"
+                    >
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_marginHorizontal="20dp"
+                        android:text="Stat 1"
+                        android:gravity="center_horizontal"
+                        android:layout_height="wrap_content">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_marginHorizontal="20dp"
+                        android:text="Stat 1"
+                        android:gravity="center_horizontal"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_marginHorizontal="20dp"
+                        android:text="Stat 1"
+                        android:gravity="center_horizontal"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_marginHorizontal="20dp"
+                        android:text="Stat 1"
+                        android:gravity="center_horizontal"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_marginHorizontal="20dp"
+                        android:text="Stat 1"
+                        android:gravity="center_horizontal"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_marginHorizontal="20dp"
+                        android:text="Stat 1"
+                        android:gravity="center_horizontal"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_marginHorizontal="20dp"
+                        android:text="Stat 1"
+                        android:gravity="center_horizontal"
+                        android:layout_height="wrap_content">
+                    </TextView>
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#808080"/>
+
+
+            </TableLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+
+
+
+
+
+
+</RelativeLayout>

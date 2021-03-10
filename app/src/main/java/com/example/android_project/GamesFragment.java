@@ -2,6 +2,7 @@ package com.example.android_project;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -26,6 +27,7 @@ public class GamesFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     private Games_Adapter game_adapter = null;
+    private Boolean loaded = false;
 
 
     // TODO: Rename and change types of parameters
@@ -61,6 +63,17 @@ public class GamesFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        if(savedInstanceState != null){
+            loaded = savedInstanceState.getBoolean("IsLoaded");
+            Log.i("INFO", "Loaded is : "+ loaded);
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean("IsLoaded", true);
     }
 
     @Override
@@ -72,12 +85,17 @@ public class GamesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_games, container, false);
         //CardView main_card = (CardView) view.findViewById(R.id.card_main);
 
-        game_adapter = new Games_Adapter(this.getActivity());
-        ListView list = (ListView) view.findViewById(R.id.list);
-        list.setAdapter(game_adapter);
+        if(!loaded) {
+            game_adapter = new Games_Adapter(this.getActivity());
+            ListView list = (ListView) view.findViewById(R.id.list);
+            list.setAdapter(game_adapter);
 
-        AsyncGetSpecific asyncTask = new AsyncGetSpecific(game_adapter);
-        asyncTask.execute("games");
+            AsyncGetSpecific asyncTask = new AsyncGetSpecific(game_adapter);
+            asyncTask.execute("games");
+
+            onSaveInstanceState(new Bundle());
+
+        }
 
         // Inflate the layout for this fragment
         //CardView main_card = (CardView) view.findViewById(R.id.card_main);
