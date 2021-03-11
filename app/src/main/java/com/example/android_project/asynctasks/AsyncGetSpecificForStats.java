@@ -69,24 +69,38 @@ public class AsyncGetSpecificForStats extends AsyncTask<String, Void, JSONObject
     protected void onPostExecute(JSONObject jsonObject) {
         Log.i("ASYNC", jsonObject.toString());
         View rootView = ((Activity)myActivity).getWindow().getDecorView().findViewById(android.R.id.content);
-        final TableLayout table = (TableLayout) rootView.findViewById(R.id.tblData);
-        final TableRow tableRow = (TableRow) ((Activity)myActivity).getLayoutInflater().inflate(R.layout.fragment_stats_row, null);
-
-        TextView tv;
-        tv = (TextView) tableRow.findViewById(R.id.cell_1);
-        tv.setText("Bleu 1");
-        table.addView(tableRow);
-
-        /*
         try {
             JSONArray data = jsonObject.getJSONArray("data");
             for (int i = 0; i < data.length(); i++) {
-
+                TableLayout table = (TableLayout) rootView.findViewById(R.id.tblData);
+                TableRow tableRow = (TableRow) ((Activity)myActivity).getLayoutInflater().inflate(R.layout.fragment_stats_row, null);
+                TextView tv;
+                Log.i("ASYNC", " i : " + String.valueOf(data.getJSONObject(i).getString("id")));
+                tv = (TextView) tableRow.findViewById(R.id.cell_1);
+                String input  = data.getJSONObject(i).getJSONObject("player").getString("first_name") + " " + data.getJSONObject(i).getJSONObject("player").getString("last_name");
+                Log.i("ASYNC", " player : " + input);
+                tv.setText(input);
+                tv = (TextView) tableRow.findViewById(R.id.cell_2);
+                Log.i("ASYNC", " pts : " + String.valueOf(data.getJSONObject(i).getString("pts")));
+                tv.setText(data.getJSONObject(i).getString("pts"));
+                tv = (TextView) tableRow.findViewById(R.id.cell_3);
+                Log.i("ASYNC", " reb : " + String.valueOf(data.getJSONObject(i).getString("reb")));
+                tv.setText(data.getJSONObject(i).getString("reb"));
+                tv = (TextView) tableRow.findViewById(R.id.cell_4);
+                Log.i("ASYNC", " stl : " + String.valueOf(data.getJSONObject(i).getString("stl")));
+                tv.setText(data.getJSONObject(i).getString("stl"));
+                tv = (TextView) tableRow.findViewById(R.id.cell_5);
+                Log.i("ASYNC", " turn : " + String.valueOf(data.getJSONObject(i).getString("turnover")));
+                tv.setText(data.getJSONObject(i).getString("turnover"));
+                tv = (TextView) tableRow.findViewById(R.id.cell_6);
+                Log.i("ASYNC", " min : " + String.valueOf(data.getJSONObject(i).getString("min")));
+                tv.setText(data.getJSONObject(i).getString("min"));
+                table.addView(tableRow);
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
-         */
+
     }
 
     protected String buildUrl(String[] strings) {
