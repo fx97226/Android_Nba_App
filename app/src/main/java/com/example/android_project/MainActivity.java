@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
+
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -28,4 +31,5 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 }
