@@ -26,70 +26,68 @@
                     android:paddingVertical="15dp"
                     android:background="@color/ButtonColor"
                     >
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:layout_marginHorizontal="20dp"
-                        android:text="Stat 1"
-                        android:gravity="center_horizontal"
-                        android:layout_height="wrap_content">
-                    </TextView>
 
                     <TextView
                         android:layout_width="fill_parent"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
+                        android:layout_height="wrap_content"
                         android:layout_marginHorizontal="20dp"
-                        android:text="Stat 1"
                         android:gravity="center_horizontal"
-                        android:layout_height="wrap_content">
-                    </TextView>
+                        android:textColor="@color/white"
+                        android:textStyle="bold"></TextView>
+
                     <TextView
                         android:layout_width="fill_parent"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
+                        android:layout_height="wrap_content"
                         android:layout_marginHorizontal="20dp"
-                        android:text="Stat 1"
                         android:gravity="center_horizontal"
-                        android:layout_height="wrap_content">
-                    </TextView>
+                        android:text="Nom"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"></TextView>
+
                     <TextView
                         android:layout_width="fill_parent"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
+                        android:layout_height="wrap_content"
                         android:layout_marginHorizontal="20dp"
-                        android:text="Stat 1"
                         android:gravity="center_horizontal"
-                        android:layout_height="wrap_content">
-                    </TextView>
+                        android:text="Points"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"></TextView>
+
                     <TextView
                         android:layout_width="fill_parent"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
+                        android:layout_height="wrap_content"
                         android:layout_marginHorizontal="20dp"
-                        android:text="Stat 1"
                         android:gravity="center_horizontal"
-                        android:layout_height="wrap_content">
-                    </TextView>
+                        android:text="Rebond"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"></TextView>
+
                     <TextView
                         android:layout_width="fill_parent"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
+                        android:layout_height="wrap_content"
                         android:layout_marginHorizontal="20dp"
-                        android:text="Stat 1"
                         android:gravity="center_horizontal"
-                        android:layout_height="wrap_content">
-                    </TextView>
+                        android:text="Interception"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"></TextView>
+
                     <TextView
                         android:layout_width="fill_parent"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
+                        android:layout_height="wrap_content"
                         android:layout_marginHorizontal="20dp"
-                        android:text="Stat 1"
                         android:gravity="center_horizontal"
-                        android:layout_height="wrap_content">
-                    </TextView>
+                        android:text="Perte de balle"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:gravity="center_horizontal"
+                        android:text="Minute"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"></TextView>
                 </TableRow>
 
                 <View

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -17,6 +18,8 @@ public class NBA_Home extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     Deque<Integer> intDq= new ArrayDeque<>(4);
     boolean flag= true;
+
+    private Fragment MyFragment = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +49,15 @@ public class NBA_Home extends AppCompatActivity {
                 intDq.remove(id);
             }
             intDq.push(id);
-            loadFragment(getFragment(item.getItemId()));
+
+            if (savedInstanceState != null) {
+                //Restore the fragment's instance
+                MyFragment = getSupportFragmentManager().getFragment(savedInstanceState, "myFragmentName");
+                Log.i("SAVE", "Je restaure l'instance du fragment");
+                loadFragment(MyFragment);
+            }else{
+                loadFragment(getFragment(item.getItemId()));
+            }
             return true;
         });
     }
@@ -72,7 +83,16 @@ public class NBA_Home extends AppCompatActivity {
     }
 
     private void loadFragment(Fragment fragment) {
+        MyFragment = fragment;
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment,fragment,fragment.getClass().getSimpleName()).commit();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.i("SAVE", "Je suis dans le save instance");
+        //Save the fragment's instance
+        getSupportFragmentManager().putFragment(outState, "myFragmentName", MyFragment);
     }
 
 
