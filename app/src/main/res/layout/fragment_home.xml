@@ -1,18 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/nba_background"
+    android:orientation="vertical"
     tools:context=".HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home fragment"
-        android:textSize="50dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_centerInParent="true"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
 
-</RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome to the NBA"
+
+                    android:layout_centerHorizontal="true"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/white"
+                    android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_margin="10dp"
+                android:padding="10dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/back"
+               >
+
+                <LinearLayout
+                    android:layout_width="170dp"
+                    android:layout_height="280dp"
+                    android:id="@+id/left_text"
+                    android:orientation="vertical"
+                    android:background="@color/FormInputTxt"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LOREM IPSUM DOLOR SIT AMET"
+                        android:textSize="20dp"
+                        android:layout_marginTop="50dp"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_margin="10dp"
+                        android:justificationMode="inter_word"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris egestas, metus et dignissim venenatis, libero ante consequat nulla, a aliquam elit quam vel diama aliquam elit quam vel diam" />
+
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:background="@drawable/nba_place"
+                    android:layout_height="280dp"
+                    android:layout_toRightOf="@id/left_text" />
+
+
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/back"
+                android:padding="20dp"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Most Viewed"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textAllCaps="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View all"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" />
+
+
+
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="100dp">
+
+                    <TextView
+                        android:layout_width="220dp"
+                        android:layout_height="match_parent"
+                        android:textSize="12sp"
+                        android:paddingHorizontal="15dp"
+                        android:justificationMode="inter_word"
+                        android:gravity="center"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce gravida ac risus et laoreet. Praesent nec semper odio. Vivamus dapibus eget ex id ultricies. Nunc et viverra" />
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/news" />
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/back"
+                android:padding="20dp"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Most Viewed"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textAllCaps="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View all"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" />
+
+
+
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="100dp">
+
+                    <TextView
+                        android:layout_width="220dp"
+                        android:gravity="center"
+                        android:layout_height="match_parent"
+                        android:textSize="12sp"
+                        android:paddingHorizontal="15dp"
+                        android:justificationMode="inter_word"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce gravida ac risus et laoreet. Praesent nec semper odio. Vivamus dapibus eget ex id ultricies. Nunc et viverra" />
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/basket" />
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    
+
+</LinearLayout>
