@@ -17,9 +17,6 @@ public class MainActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-
-
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -27,9 +24,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
                 finish();
             }
-        }, 4*1000); // wait for 5 seconds
-
-
+        }, 4*1000); // wait for 4 seconds
     }
 
 }

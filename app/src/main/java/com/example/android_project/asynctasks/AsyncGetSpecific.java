@@ -4,15 +4,12 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.example.android_project.adaptor.Games_Adapter;
-import com.example.android_project.adaptor.Stats_Adapter;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
 

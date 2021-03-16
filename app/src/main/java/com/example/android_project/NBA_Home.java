@@ -69,7 +69,7 @@ public class NBA_Home extends AppCompatActivity {
                 return MyGameFragment;
             case R.id.statistic_id:
                 bottomNavigationView.getMenu().getItem(2).setChecked(true);
-                if(MyStatsFragment == null)MyStatsFragment = new StatsFragment();
+                if(MyStatsFragment == null) MyStatsFragment = new StatsFragment();
                 return MyStatsFragment;
             case R.id.team_id:
                 bottomNavigationView.getMenu().getItem(3).setChecked(true);
