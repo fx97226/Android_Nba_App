@@ -1,7 +1,6 @@
 package com.example.android_project.adaptor;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,22 +8,12 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.ImageRequest;
 import com.example.android_project.R;
-import com.example.android_project.singleton.MySingleton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
-import java.util.Vector;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Games_Adapter extends BaseAdapter {
     private final Context context; //context
@@ -55,6 +44,23 @@ public class Games_Adapter extends BaseAdapter {
     @Override
     public long getItemId(int position) {
         return position;
+    }
+
+    public ArrayList<String> onSaveInstanceState(){
+        int size = getCount();
+        ArrayList<String> items = new ArrayList<String>(size);
+        for(int i=0;i<size;i++){
+            items.add(getItem(i).toString());
+        }
+        return items;
+    }
+
+    public void onRestoreInstanceState(ArrayList<String> array) throws JSONException {
+        items.clear();
+        for(int i=0;i<array.size();i++){
+            Log.i("SAVE", array.get(i));
+            items.add(new JSONObject(array.get(i)));
+        }
     }
 
     @Override

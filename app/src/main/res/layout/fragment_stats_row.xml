@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/row"
+    android:background="#E1E1E1"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingVertical="5dp">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/ic_icon"/>
+
+    <TextView
+        android:id="@+id/cell_1"
+        android:layout_width="fill_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:text="Virat Kohli" />
+
+    <TextView
+        android:id="@+id/cell_2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:text="IND" />
+
+    <TextView
+        android:id="@+id/cell_3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_weight="1"
+        android:text="895"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/cell_4"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+
+        android:layout_weight="1"
+        android:text="895"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/cell_5"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+
+        android:layout_weight="1"
+        android:text="895"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/cell_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:text="895"
+        android:textAlignment="center" />
+</TableRow>

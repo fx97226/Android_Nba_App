@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,8 +64,7 @@ public class TeamFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View v = inflater.inflate(R.layout.fragment_team, container, false);
+        View view = inflater.inflate(R.layout.fragment_team, container, false);
         CardView a = (CardView) v.findViewById(R.id.team_blazers);
         a.setOnClickListener(this);
         CardView b = (CardView) v.findViewById(R.id.team_bucks);
@@ -127,11 +127,8 @@ public class TeamFragment extends Fragment implements View.OnClickListener {
         x.setOnClickListener(this);
         CardView y = (CardView) v.findViewById(R.id.team_76ers);
         y.setOnClickListener(this);
-
         return v;
         // Inflate the layout for this fragment
-
-
     }
 
 
@@ -173,6 +170,5 @@ public class TeamFragment extends Fragment implements View.OnClickListener {
                 startActivity(intent);
                 break;
         }
-
     }
 }

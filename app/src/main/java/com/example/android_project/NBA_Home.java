@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -17,6 +18,11 @@ public class NBA_Home extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     Deque<Integer> intDq= new ArrayDeque<>(4);
     boolean flag= true;
+
+    private Fragment MyGameFragment = null;
+    private Fragment MyTeamFragment = null;
+    private Fragment MyStatsFragment = null;
+    private Fragment MyHomeFragment = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,17 +61,20 @@ public class NBA_Home extends AppCompatActivity {
         switch (itemId){
             case R.id.home_id:
                 bottomNavigationView.getMenu().getItem(0).setChecked(true);
-                return new HomeFragment();
-            case R.id.game_id:
+                if(MyHomeFragment == null)MyHomeFragment = new HomeFragment();
+                return MyHomeFragment;
+                case R.id.game_id:
                 bottomNavigationView.getMenu().getItem(1).setChecked(true);
-                return new GamesFragment();
+                if(MyGameFragment == null) MyGameFragment = new GamesFragment();
+                return MyGameFragment;
             case R.id.statistic_id:
                 bottomNavigationView.getMenu().getItem(2).setChecked(true);
-                return new StatsFragment();
+                if(MyStatsFragment == null)MyStatsFragment = new StatsFragment();
+                return MyStatsFragment;
             case R.id.team_id:
                 bottomNavigationView.getMenu().getItem(3).setChecked(true);
-                return new TeamFragment();
-
+                if(MyTeamFragment == null)MyTeamFragment = new TeamFragment();
+                return MyTeamFragment;
         }
         bottomNavigationView.getMenu().getItem(0).setChecked(true);
         return new HomeFragment();
@@ -73,6 +82,12 @@ public class NBA_Home extends AppCompatActivity {
 
     private void loadFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment,fragment,fragment.getClass().getSimpleName()).commit();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.i("SAVE", "Je suis dans le save instance NBA_Home");
     }
 
 

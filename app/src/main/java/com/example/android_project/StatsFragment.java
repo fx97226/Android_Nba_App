@@ -2,11 +2,17 @@ package com.example.android_project;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.android_project.adaptor.Games_Adapter;
+import com.example.android_project.adaptor.Stats_Adapter;
+import com.example.android_project.asynctasks.AsyncGetSpecific;
+import com.example.android_project.asynctasks.AsyncGetSpecificForStats;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,6 +25,9 @@ public class StatsFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    private Stats_Adapter stats_adapter = null;
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -55,10 +64,18 @@ public class StatsFragment extends Fragment {
         }
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_stats_temp, container, false);
+
+
+        AsyncGetSpecificForStats asyncTask = new AsyncGetSpecificForStats(this.getActivity());
+        asyncTask.execute("stats");
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_stats, container, false);
+        return view;
     }
 }

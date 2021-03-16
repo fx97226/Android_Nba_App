@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.example.android_project.adaptor.Games_Adapter;
+import com.example.android_project.adaptor.Stats_Adapter;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
@@ -72,6 +73,7 @@ public class AsyncGetSpecific extends AsyncTask<String, Void, JSONObject> {
     }
 
     protected String buildUrl(String[] strings) {
-        return "https://free-nba.p.rapidapi.com/" + strings[0] + "?page=0&per_page=10&date=2020-03-04";
+        /* + "?page=0&per_page=10&date=2020-03-04" */
+        return "https://free-nba.p.rapidapi.com/" + strings[0] ;
     }
 }
