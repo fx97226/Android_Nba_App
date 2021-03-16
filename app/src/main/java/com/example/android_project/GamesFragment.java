@@ -15,55 +15,73 @@ import android.widget.ListView;
 
 import com.example.android_project.adaptor.Games_Adapter;
 import com.example.android_project.asynctasks.AsyncGetSpecific;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
 public class GamesFragment extends Fragment {
 
-    private Games_Adapter game_adapter = null;
-    private Boolean loaded = false;
+    private Games_Adapter game_adapter;
+    private ArrayList<String> game_adapter_SaveState;
 
+    private Boolean loaded = false;
     private Bundle savedState = new Bundle();
+
     public GamesFragment() {
         // Required empty public constructor
     }
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        if(savedInstanceState != null){
-            loaded = savedInstanceState.getBoolean("loaded");
-            Log.i("SAVE", "1 : Loaded is " + loaded);
-        }
-        Log.i("SAVE", "2 : Loaded is " + loaded);
-        Log.i("SAVE", "2 : SaveInstance is " + savedInstanceState);
-        savedState = savedInstanceState;
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        /*Log.i("SAVE", "On save Instance de GamesFragment");
+        if (savedInstanceState != null && savedInstanceState.containsKey("KEY_ADAPTER_STATE")) {
+            Log.i("SAVE", "Je recup la sauvegarde");
+            game_adapter_SaveState = savedInstanceState.getStringArrayList("KEY_ADAPTER_STATE");
+        }else{
+            Log.i("SAVE", "Nothing save yet");
+        }*/
     }
     @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
+    public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        Log.i("SAVE", "On save Instance de GamesFragment");
-        outState.putBoolean("loaded", true);
+        /*if( game_adapter != null){
+            game_adapter_SaveState = game_adapter.onSaveInstanceState();
+        }
+        outState.putStringArrayList("KEY_ADAPTER_STATE", game_adapter_SaveState);
+        Log.i("SAVE", "On save Instance de GamesFragment");*/
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Creation de la liste et lien avec l'adapter
-
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_games, container, false);
-        Log.i("FRAG", "Je suis dans le GamesFragment");
-        game_adapter = new Games_Adapter(this.getActivity());
         ListView list = (ListView) view.findViewById(R.id.list);
-        list.setAdapter(game_adapter);
-        AsyncGetSpecific asyncTask = new AsyncGetSpecific(game_adapter);
-        asyncTask.execute("games");
+        Log.i("FRAG", "Je suis dans le GamesFragment");
+        if(game_adapter == null){
+            game_adapter = new Games_Adapter(this.getActivity());
+        }
+        if(game_adapter_SaveState != null){
+            try {
+                game_adapter.onRestoreInstanceState(game_adapter_SaveState);
+                list.setAdapter(game_adapter);
+                game_adapter.notifyDataSetChanged();
+                Log.i("SAVE", "Restoration complete");
+            } catch (JSONException e) {
+                e.printStackTrace();
+                Log.i("SAVE", "ERROR in restore");
+            }
+        }else{
+            list.setAdapter(game_adapter);
+            Log.i("SAVE", "Launch ASYNC");
+            AsyncGetSpecific asyncTask = new AsyncGetSpecific(game_adapter);
+            asyncTask.execute("games");
+        }
         // Inflate the layout for this fragment
         //CardView main_card = (CardView) view.findViewById(R.id.card_main);
         return view;
-    }
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        savedState = new Bundle();
-        onSaveInstanceState(savedState);
-        Log.i("SAVE", "ON destroy");
     }
 }

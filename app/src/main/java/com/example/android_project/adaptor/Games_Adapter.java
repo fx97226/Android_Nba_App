@@ -46,6 +46,23 @@ public class Games_Adapter extends BaseAdapter {
         return position;
     }
 
+    public ArrayList<String> onSaveInstanceState(){
+        int size = getCount();
+        ArrayList<String> items = new ArrayList<String>(size);
+        for(int i=0;i<size;i++){
+            items.add(getItem(i).toString());
+        }
+        return items;
+    }
+
+    public void onRestoreInstanceState(ArrayList<String> array) throws JSONException {
+        items.clear();
+        for(int i=0;i<array.size();i++){
+            Log.i("SAVE", array.get(i));
+            items.add(new JSONObject(array.get(i)));
+        }
+    }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         /* We create the display of our row like in our card_layout **/
