@@ -64,7 +64,7 @@ public class TeamFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_team, container, false);
+        View v = inflater.inflate(R.layout.fragment_team, container, false);
         CardView a = (CardView) v.findViewById(R.id.team_blazers);
         a.setOnClickListener(this);
         CardView b = (CardView) v.findViewById(R.id.team_bucks);
