@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.example.android_project.R;
 
 import org.json.JSONException;
@@ -31,9 +32,7 @@ public class Games_Adapter extends BaseAdapter {
     }
 
 
-
-
-    public void clear(){
+    public void clear() {
         this.items = new ArrayList<>();
     }
 
@@ -53,10 +52,10 @@ public class Games_Adapter extends BaseAdapter {
         return position;
     }
 
-    public ArrayList<String> onSaveInstanceState(){
+    public ArrayList<String> onSaveInstanceState() {
         int size = getCount();
         ArrayList<String> items = new ArrayList<String>(size);
-        for(int i=0;i<size;i++){
+        for (int i = 0; i < size; i++) {
             items.add(getItem(i).toString());
         }
         return items;
@@ -64,7 +63,7 @@ public class Games_Adapter extends BaseAdapter {
 
     public void onRestoreInstanceState(ArrayList<String> array) throws JSONException {
         items.clear();
-        for(int i=0;i<array.size();i++){
+        for (int i = 0; i < array.size(); i++) {
             items.add(new JSONObject(array.get(i)));
         }
     }

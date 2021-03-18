@@ -4,22 +4,15 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.android_project.R;
-import com.example.android_project.adaptor.Stats_Adapter_Table;
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.HttpGet;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.SyncHttpClient;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.IOException;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -67,9 +60,10 @@ public class AsyncGetSpecificTeam extends AsyncTask<String, Void, JSONObject> {
             String team_name = jsonObject.getString("name");
             if (team_name.equals("76ers")) {
                 image_team1.setImageResource(myActivity.getResources().getIdentifier("com.example.android_project:drawable/seventysixers", null, null));
-            }if(team_name.equals("Trail Blazers")){
+            }
+            if (team_name.equals("Trail Blazers")) {
                 image_team1.setImageResource(myActivity.getResources().getIdentifier("com.example.android_project:drawable/blazers", null, null));
-            }else {
+            } else {
                 image_team1.setImageResource(myActivity.getResources().getIdentifier("com.example.android_project:drawable/" + jsonObject.getString("name").toLowerCase(), null, null));
             }
             full_name.setText(jsonObject.getString("full_name"));

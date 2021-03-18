@@ -19,6 +19,7 @@ public class StatsFragment extends Fragment {
     public StatsFragment() {
         // Required empty public constructor
     }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,12 +29,12 @@ public class StatsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Log.i("SAVE", "Create View Stats");
-        if(stats_adapter == null){
+        if (stats_adapter == null) {
             stats_adapter = new Stats_Adapter_Table(this.getActivity());
         }
-        if(stats_adapter.getCount() > 0){
+        if (stats_adapter.getCount() > 0) {
             stats_adapter.RestoreState(this.getActivity());
-        }else{
+        } else {
             AsyncGetSpecificForStats asyncTask = new AsyncGetSpecificForStats(stats_adapter);
             asyncTask.execute("stats");
         }

@@ -41,11 +41,13 @@ public class GamesFragment extends Fragment {
     public GamesFragment() {
         // Required empty public constructor
     }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
     }
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -74,20 +76,20 @@ public class GamesFragment extends Fragment {
         update.setOnClickListener(v -> {
             TextView tv = (TextView) getActivity().findViewById(R.id.tv);
             String date = (String) tv.getText().toString();
-            if(date.length() == 0){
+            if (date.length() == 0) {
                 date = " :2019-01-30";
             }
-            Log.i("ASYNC, " ,date);
+            Log.i("ASYNC, ", date);
             date = date.split(":")[1];
-            Log.i("ASYNC", "Date is : "+ date);
+            Log.i("ASYNC", "Date is : " + date);
             game_adapter.clear();
             game_adapter.notifyDataSetChanged();
             asyncTask = new AsyncGetSpecific(game_adapter);
-            asyncTask.execute("games" , date);
+            asyncTask.execute("games", date);
         });
 
         Log.i("FRAG", "Je suis dans le GamesFragment");
-        if(game_adapter == null){
+        if (game_adapter == null) {
             game_adapter = new Games_Adapter(this.getActivity());
         }
         list.setAdapter(game_adapter);
@@ -99,9 +101,9 @@ public class GamesFragment extends Fragment {
         return view;
     }
 
-    public static class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener{
+    public static class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
         @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState){
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
             final Calendar calendar = Calendar.getInstance();
             int year = calendar.get(Calendar.YEAR);
             int month = calendar.get(Calendar.MONTH);
@@ -118,7 +120,7 @@ public class GamesFragment extends Fragment {
                 Those theme completely hide the disable dates from date picker object.
              */
             DatePickerDialog dpd = new DatePickerDialog(getActivity(),
-                    AlertDialog.THEME_HOLO_LIGHT,this,year,month,day);
+                    AlertDialog.THEME_HOLO_LIGHT, this, year, month, day);
 
             /*
                 add(int field, int value)
@@ -155,10 +157,10 @@ public class GamesFragment extends Fragment {
             // So, now date picker selectable date range is from Jan 2019 to Feb 2021 days only
 
             // Return the DatePickerDialog
-            return  dpd;
+            return dpd;
         }
 
-        public void onDateSet(DatePicker view, int year, int month, int day){
+        public void onDateSet(DatePicker view, int year, int month, int day) {
             // Do something with the chosen date
             TextView tv = (TextView) getActivity().findViewById(R.id.tv);
 
@@ -168,21 +170,21 @@ public class GamesFragment extends Fragment {
             cal.set(year, month, day, 0, 0, 0);
             String strmonth = String.valueOf(month);
             String strday = String.valueOf(day);
-            if(month < 10) strmonth = "0" +  String.valueOf(month);
-            if(day < 10){
-                strday = "0" +  String.valueOf(day);
-            }else if( day > 10 & day < 20){
-                strday = "1" +  String.valueOf(day);
-            }else if( day > 20 & day < 30){
-                strday = "2" +  String.valueOf(day);
-            }else  strday = "3" +  String.valueOf(day);
-            Log.i("DATE", year + "-" + strmonth +"-" + strday  );
+            if (month < 10) strmonth = "0" + String.valueOf(month);
+            if (day < 10) {
+                strday = "0" + String.valueOf(day);
+            } else if (day > 10 & day < 20) {
+                strday = "1" + String.valueOf(day);
+            } else if (day > 20 & day < 30) {
+                strday = "2" + String.valueOf(day);
+            } else strday = "3" + String.valueOf(day);
+            Log.i("DATE", year + "-" + strmonth + "-" + strday);
             Date chosenDate = cal.getTime();
 
             // Format the date using style and locale
             DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.FRANCE);
             String formattedDate = df.format(chosenDate);
-            formattedDate = "List of all the games of :" + year + "-" + strmonth +"-" + strday;
+            formattedDate = "List of all the games of :" + year + "-" + strmonth + "-" + strday;
 
             // Display the chosen date to app interface
             tv.setText(formattedDate);

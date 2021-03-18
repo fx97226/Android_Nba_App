@@ -10,7 +10,8 @@ import com.example.android_project.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static int SPLASH_TIME= 4000;
+    public static int SPLASH_TIME = 4000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
                 finish();
             }
-        }, 4*1000); // wait for 4 seconds
+        }, SPLASH_TIME); // wait for 4 seconds
     }
 
 }

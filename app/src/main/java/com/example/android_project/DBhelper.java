@@ -28,44 +28,41 @@ public class DBhelper extends SQLiteOpenHelper {
 
     // insert into database
 
-    public boolean ins(String firstname, String lastname, String username, String email, String password){
-        SQLiteDatabase db= this.getWritableDatabase();
+    public boolean ins(String firstname, String lastname, String username, String email, String password) {
+        SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("firstname",firstname);
-        contentValues.put("lastname",lastname);
-        contentValues.put("username",username);
-        contentValues.put("email",email);
-        contentValues.put("password",password);
+        contentValues.put("firstname", firstname);
+        contentValues.put("lastname", lastname);
+        contentValues.put("username", username);
+        contentValues.put("email", email);
+        contentValues.put("password", password);
 
-        long i = db.insert("user",null,contentValues);
-        if (i==-1){
+        long i = db.insert("user", null, contentValues);
+        if (i == -1) {
             return false;
-        }
-        else {
+        } else {
             return true;
         }
     }
 
-    public boolean checkemail(String email){
+    public boolean checkemail(String email) {
 
-        SQLiteDatabase db= this.getReadableDatabase();
-        Cursor c = db.rawQuery("Select * from user where email=?", new String[] {email});
-        if (c.getCount()>0){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery("Select * from user where email=?", new String[]{email});
+        if (c.getCount() > 0) {
             return false;
-        }
-        else{
+        } else {
             return true;
         }
 
     }
 
-    public boolean check_credentials(String email, String password){
-        SQLiteDatabase db= this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("Select * from user where email=? and password=?",new String[]{email,password});
-        if (cursor.getCount()>0){
+    public boolean check_credentials(String email, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("Select * from user where email=? and password=?", new String[]{email, password});
+        if (cursor.getCount() > 0) {
             return true;
-        }
-        else{
+        } else {
             return false;
         }
 

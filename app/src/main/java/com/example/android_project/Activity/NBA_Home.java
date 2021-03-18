@@ -19,8 +19,8 @@ import java.util.Deque;
 public class NBA_Home extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    Deque<Integer> intDq= new ArrayDeque<>(4);
-    boolean flag= true;
+    Deque<Integer> intDq = new ArrayDeque<>(4);
+    boolean flag = true;
 
     private Fragment MyGameFragment = null;
     private Fragment MyTeamFragment = null;
@@ -42,13 +42,13 @@ public class NBA_Home extends AppCompatActivity {
         bottomNavigationView.setSelectedItemId(R.id.home_id);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
-            int id= item.getItemId();
-            if(intDq.contains(id)){
-                if(id== R.id.home_id){
-                    if (intDq.size()!=1){
-                        if (flag){
+            int id = item.getItemId();
+            if (intDq.contains(id)) {
+                if (id == R.id.home_id) {
+                    if (intDq.size() != 1) {
+                        if (flag) {
                             intDq.addFirst(R.id.home_id);
-                            flag=false;
+                            flag = false;
                         }
                     }
                 }
@@ -61,22 +61,22 @@ public class NBA_Home extends AppCompatActivity {
     }
 
     private Fragment getFragment(int itemId) {
-        switch (itemId){
+        switch (itemId) {
             case R.id.home_id:
                 bottomNavigationView.getMenu().getItem(0).setChecked(true);
-                if(MyHomeFragment == null)MyHomeFragment = new HomeFragment();
+                if (MyHomeFragment == null) MyHomeFragment = new HomeFragment();
                 return MyHomeFragment;
-                case R.id.game_id:
+            case R.id.game_id:
                 bottomNavigationView.getMenu().getItem(1).setChecked(true);
-                if(MyGameFragment == null) MyGameFragment = new GamesFragment();
+                if (MyGameFragment == null) MyGameFragment = new GamesFragment();
                 return MyGameFragment;
             case R.id.statistic_id:
                 bottomNavigationView.getMenu().getItem(2).setChecked(true);
-                if(MyStatsFragment == null) MyStatsFragment = new StatsFragment();
+                if (MyStatsFragment == null) MyStatsFragment = new StatsFragment();
                 return MyStatsFragment;
             case R.id.team_id:
                 bottomNavigationView.getMenu().getItem(3).setChecked(true);
-                if(MyTeamFragment == null)MyTeamFragment = new TeamFragment();
+                if (MyTeamFragment == null) MyTeamFragment = new TeamFragment();
                 return MyTeamFragment;
         }
         bottomNavigationView.getMenu().getItem(0).setChecked(true);
@@ -84,7 +84,7 @@ public class NBA_Home extends AppCompatActivity {
     }
 
     private void loadFragment(Fragment fragment) {
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment,fragment,fragment.getClass().getSimpleName()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment, fragment, fragment.getClass().getSimpleName()).commit();
     }
 
     @Override
@@ -97,9 +97,9 @@ public class NBA_Home extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         intDq.pop();
-        if (!intDq.isEmpty()){
+        if (!intDq.isEmpty()) {
             loadFragment(getFragment(intDq.peek()));
-        }else{
+        } else {
             finish();
         }
     }
