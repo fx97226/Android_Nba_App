@@ -135,37 +135,6 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp"
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gender : "
-            android:textSize="20sp"
-            />
-
-        <RadioButton
-            android:id="@+id/RB_male"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Male"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/RB_female"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Female"
-            android:textSize="20sp" />
-    </RadioGroup>
-
-
     <android.widget.Button
         android:id="@+id/register"
         android:layout_width="match_parent"

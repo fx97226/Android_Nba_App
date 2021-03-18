@@ -8,23 +8,34 @@
     android:orientation="vertical"
     tools:context=".TeamFragment">
 
-
     <TextView
         android:id="@+id/tv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="210dp"
         android:layout_height="wrap_content"
-        android:text="Pick a Date" />
-
-    <Button
-        android:id="@+id/update"
+        android:layout_marginVertical="10dp"/>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Update list" />
+        android:layout_marginVertical="10dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/button"
+            android:layout_width="210dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:text="Pick a Date" />
+
+        <Button
+            android:id="@+id/update"
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update list" />
+    </LinearLayout>
+
+
+
 
     <ListView
         android:id="@+id/list"
