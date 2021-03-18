@@ -138,10 +138,10 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
-        android:layout_marginTop="35dp">
+        android:layout_marginTop="15dp">
         <LinearLayout
             android:orientation="horizontal"
-            android:paddingLeft="25dp"
+            android:padding="10sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -150,56 +150,12 @@
                 android:layout_gravity="center_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:text="Lorem ipsum dolor sit amet"/>
+                android:lineHeight="20sp"
+                android:textSize="16sp"
+                android:justificationMode="inter_word"
+                android:text="      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget dolor morbi non arcu risus quis varius quam. Nulla posuere sollicitudin aliquam ultrices. Malesuada pellentesque elit eget gravida cum. Fames ac turpis egestas sed tempus. Mattis aliquam faucibus purus in massa tempor. Proin libero nunc consequat interdum varius sit. Id venenatis a condimentum vitae sapien pellentesque habitant morbi tristique. Erat velit scelerisque in dictum non consectetur. Erat imperdiet sed euismod nisi."/>
         </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="25dp"
-            android:orientation="horizontal"
-            android:paddingLeft="25dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:textStyle="bold"
 
-                android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:text="Lorem ipsum dolor sit amet"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="25dp"
-            android:orientation="horizontal"
-            android:paddingLeft="25dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:textStyle="bold"
-
-                android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:text="Lorem ipsum dolor sit amet"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="25dp"
-            android:orientation="horizontal"
-            android:paddingLeft="25dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:textStyle="bold"
-
-                android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:text="Lorem ipsum dolor sit amet"/>
-        </LinearLayout>
     </LinearLayout>
 
 
