@@ -22,13 +22,13 @@
         >
 
         <EditText
-            android:id="@+id/usnm_log"
+            android:id="@+id/mail_log"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:background="@color/white"
             android:ems="10"
-            android:hint="Username"
+            android:hint="Email"
             android:inputType="text"
             android:textSize="22sp" />
 
@@ -62,7 +62,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="@drawable/button_round"
-        android:onClick="btn_login"
         android:text="Login"
         android:textColor="@color/white"
         android:textSize="20sp" />

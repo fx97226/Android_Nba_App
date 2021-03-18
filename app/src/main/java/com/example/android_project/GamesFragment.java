@@ -46,6 +46,7 @@ public class GamesFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
     @Override
     public void onSaveInstanceState(Bundle outState) {
