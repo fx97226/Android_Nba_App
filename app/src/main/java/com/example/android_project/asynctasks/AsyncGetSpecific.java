@@ -53,10 +53,17 @@ public class AsyncGetSpecific extends AsyncTask<String, Void, JSONObject> {
         Log.i("ASYNC", jsonObject.toString());
         try {
             JSONArray data = jsonObject.getJSONArray("data");
-            for (int i = 0; i < data.length(); i++) {
-                adapter.add(data.getJSONObject(i));
+            if(data.length() == 0){
+                adapter.add(new JSONObject("{\"data\": \"No Games\"}"));
+                Log.i("ASYNC", new JSONObject("{\"data\":\"No Games\"}").toString());
                 adapter.notifyDataSetChanged();
+            }else{
+                for (int i = 0; i < data.length(); i++) {
+                    adapter.add(data.getJSONObject(i));
+                    adapter.notifyDataSetChanged();
+                }
             }
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
