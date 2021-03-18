@@ -56,8 +56,6 @@ public class GamesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Creation de la liste et lien avec l'adapter
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_games, container, false);
         ListView list = (ListView) view.findViewById(R.id.list);
 
@@ -79,9 +77,7 @@ public class GamesFragment extends Fragment {
             if (date.length() == 0) {
                 date = " :2019-01-30";
             }
-            Log.i("ASYNC, ", date);
             date = date.split(":")[1];
-            Log.i("ASYNC", "Date is : " + date);
             game_adapter.clear();
             game_adapter.notifyDataSetChanged();
             asyncTask = new AsyncGetSpecific(game_adapter);
@@ -94,10 +90,7 @@ public class GamesFragment extends Fragment {
         }
         list.setAdapter(game_adapter);
         asyncTask = new AsyncGetSpecific(game_adapter);
-        Log.i("SAVE", "Launch ASYNC");
-        asyncTask.execute("games", "2019-01-30");
-        // Inflate the layout for this fragment
-        //CardView main_card = (CardView) view.findViewById(R.id.card_main);
+        asyncTask.execute("games", "2021-02-08");
         return view;
     }
 

@@ -64,6 +64,6 @@ public class AsyncGetSpecific extends AsyncTask<String, Void, JSONObject> {
 
     protected String buildUrl(String[] strings) {
         /* + "?page=0&per_page=10&date=2020-03-04" */
-        return "https://free-nba.p.rapidapi.com/" + strings[0] + "?page=0&per_page=10&date=" + strings[1];
+        return "https://free-nba.p.rapidapi.com/" + strings[0] + "?dates[]=" + strings[1];
     }
 }
