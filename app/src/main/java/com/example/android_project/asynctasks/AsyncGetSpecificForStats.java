@@ -54,7 +54,6 @@ public class AsyncGetSpecificForStats extends AsyncTask<String, Void, JSONObject
 
     @Override
     protected void onPostExecute(JSONObject jsonObject) {
-        Log.i("ASYNC", jsonObject.toString());
         try {
             JSONArray data = jsonObject.getJSONArray("data");
             for (int i = 0; i < data.length(); i++) {

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#E1E1E1E1"
     android:orientation="vertical"
-    tools:context=".TeamFragment">
+    tools:context=".Fragment.TeamFragment">
 
     <TextView
         android:id="@+id/tv"

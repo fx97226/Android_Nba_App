@@ -9,7 +9,7 @@
 
 
     android:padding="35dp"
-    tools:context=".NBA_login">
+    tools:context=".Activity.NBA_login">
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_marginTop="120dp"

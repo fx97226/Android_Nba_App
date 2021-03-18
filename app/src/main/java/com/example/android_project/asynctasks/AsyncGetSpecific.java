@@ -6,6 +6,7 @@ import android.util.Log;
 import com.example.android_project.adaptor.Games_Adapter;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.SyncHttpClient;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,8 +24,9 @@ public class AsyncGetSpecific extends AsyncTask<String, Void, JSONObject> {
     @Override
     protected JSONObject doInBackground(String... strings) {
         final JSONObject[] response = {null};
+        Log.i("ASYNC", " DoInBackground");
         if (strings[0].equals("games") || strings[0].equals("teams") || strings[0].equals("players")) {
-            AsyncHttpClient client = new AsyncHttpClient();
+            SyncHttpClient client = new SyncHttpClient();
             client.addHeader("x-rapidapi-key", "987a652a7cmshb9247e1fe068886p1ef584jsn4df5ed246ff7");
             client.addHeader("x-rapidapi-host", "free-nba.p.rapidapi.com");
             String url = buildUrl(strings);
@@ -38,17 +40,11 @@ public class AsyncGetSpecific extends AsyncTask<String, Void, JSONObject> {
                     Log.e("ERROR", e.toString());
                     response[0] = e;
                 }
-
-                // ----New Overridden method
-                @Override
-                public boolean getUseSynchronousMode() {
-                    return false;
-                }
             });
+            while (response[0] == null) Log.i("ASYNC", "Waiting..."); // We wait for response
         } else {
             Log.e("ASYNC", "Wrong parameters must be ( players/games/teams, id )");
         }
-        while (response[0] == null) ; // We wait for response
         return response[0];
     }
 

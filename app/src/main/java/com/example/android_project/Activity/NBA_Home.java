@@ -1,13 +1,16 @@
-package com.example.android_project;
+package com.example.android_project.Activity;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
 
+import com.example.android_project.Fragment.GamesFragment;
+import com.example.android_project.Fragment.HomeFragment;
+import com.example.android_project.Fragment.StatsFragment;
+import com.example.android_project.Fragment.TeamFragment;
+import com.example.android_project.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayDeque;

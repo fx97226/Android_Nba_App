@@ -7,7 +7,7 @@
     android:background="#E1E1E1E1"
     android:orientation="vertical"
     android:padding="24dp"
-    tools:context=".GamesFragment">
+    tools:context=".Fragment.GamesFragment">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -68,7 +68,7 @@
                                 android:id="@+id/image_team1"
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
-                                android:src="@drawable/rocket" />
+                                android:src="@drawable/rockets" />
 
                             <TextView
                                 android:id="@+id/name_team1"

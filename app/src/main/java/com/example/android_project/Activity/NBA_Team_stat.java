@@ -1,4 +1,4 @@
-package com.example.android_project;
+package com.example.android_project.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,7 @@ import android.util.Base64;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.example.android_project.R;
 import com.example.android_project.asynctasks.AsyncGetSpecific;
 import com.example.android_project.asynctasks.AsyncGetSpecificTeam;
 import com.loopj.android.http.AsyncHttpClient;

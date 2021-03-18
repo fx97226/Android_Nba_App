@@ -1,4 +1,4 @@
-package com.example.android_project;
+package com.example.android_project.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,10 +6,12 @@ import android.os.Bundle;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.android_project.Activity.NBA_Team_stat;
+import com.example.android_project.R;
 
 /**
  * A simple {@link Fragment} subclass.

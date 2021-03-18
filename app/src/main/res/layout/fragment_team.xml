@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#E1E1E1E1"
-    tools:context=".TeamFragment">
+    tools:context=".Fragment.TeamFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -893,7 +893,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/rocket">
+                        android:src="@drawable/rockets">
                     </ImageView>
 
                     <TextView
