@@ -27,26 +27,24 @@ public class AsyncGetSpecific extends AsyncTask<String, Void, JSONObject> {
             AsyncHttpClient client = new AsyncHttpClient();
             client.addHeader("x-rapidapi-key", "987a652a7cmshb9247e1fe068886p1ef584jsn4df5ed246ff7");
             client.addHeader("x-rapidapi-host", "free-nba.p.rapidapi.com");
-            for (int i = 0; i < 10; i++) {
-                String url = buildUrl(strings);
-                client.get(url, new JsonHttpResponseHandler() {
-                    public void onSuccess(int statusCode, Header[] headers, JSONObject json) {
-                        response[0] = json;
-                    }
+            String url = buildUrl(strings);
+            client.get(url, new JsonHttpResponseHandler() {
+                public void onSuccess(int statusCode, Header[] headers, JSONObject json) {
+                    response[0] = json;
+                }
 
-                    public void onFailure(int statusCode, Header[] headers, Throwable t, JSONObject e) {
-                        // Handle the failure and alert the user to retry
-                        Log.e("ERROR", e.toString());
-                        response[0] = e;
-                    }
+                public void onFailure(int statusCode, Header[] headers, Throwable t, JSONObject e) {
+                    // Handle the failure and alert the user to retry
+                    Log.e("ERROR", e.toString());
+                    response[0] = e;
+                }
 
-                    // ----New Overridden method
-                    @Override
-                    public boolean getUseSynchronousMode() {
-                        return false;
-                    }
-                });
-            }
+                // ----New Overridden method
+                @Override
+                public boolean getUseSynchronousMode() {
+                    return false;
+                }
+            });
         } else {
             Log.e("ASYNC", "Wrong parameters must be ( players/games/teams, id )");
         }
