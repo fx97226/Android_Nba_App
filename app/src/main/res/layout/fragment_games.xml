@@ -6,15 +6,32 @@
     android:layout_height="match_parent"
     android:background="#E1E1E1E1"
     android:orientation="vertical"
-    tools:context=".TeamFragment" >
+    tools:context=".TeamFragment">
 
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:text="Pick a Date" />
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update list" />
 
     <ListView
         android:id="@+id/list"
-        android:textAlignment="center"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:divider="@null"
         android:dividerHeight="0dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="center" />
+        android:textAlignment="center" />
 </LinearLayout>

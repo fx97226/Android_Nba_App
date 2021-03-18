@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class Games_Adapter extends BaseAdapter {
     private final Context context; //context
-    private final ArrayList<JSONObject> items; //data source of the list adapter
+    private ArrayList<JSONObject> items; //data source of the list adapter
 
     // CONSTRUCTOR
     public Games_Adapter(Context context) {
@@ -28,6 +28,13 @@ public class Games_Adapter extends BaseAdapter {
     // ADD FUNCTION FOR THE LIST
     public void add(JSONObject string) {
         this.items.add(string);
+    }
+
+
+
+
+    public void clear(){
+        this.items = new ArrayList<>();
     }
 
     // BASE ADAPTER METHOD
@@ -87,13 +94,11 @@ public class Games_Adapter extends BaseAdapter {
             visitor_team = game.getJSONObject("visitor_team").getString("name");
 
             if (visitor_team.equals("76ers")) {
-                Log.i("ASYNC", "going to sixers : " + visitor_team.toLowerCase());
                 image_team2.setImageResource(context.getResources().getIdentifier("com.example.android_project:drawable/seventysixers", null, null));
             } else {
                 image_team2.setImageResource(context.getResources().getIdentifier("com.example.android_project:drawable/" + game.getJSONObject("visitor_team").getString("name").toLowerCase(), null, null));
             }
             if (home_team.equals("76ers")) {
-                Log.i("ASYNC", "going to sixers : " + home_team.toLowerCase());
                 image_team1.setImageResource(context.getResources().getIdentifier("com.example.android_project:drawable/seventysixers", null, null));
             } else {
                 image_team1.setImageResource(context.getResources().getIdentifier("com.example.android_project:drawable/" + game.getJSONObject("home_team").getString("name").toLowerCase(), null, null));

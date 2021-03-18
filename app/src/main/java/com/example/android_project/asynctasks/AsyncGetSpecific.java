@@ -57,7 +57,6 @@ public class AsyncGetSpecific extends AsyncTask<String, Void, JSONObject> {
     @Override
     protected void onPostExecute(JSONObject jsonObject) {
         Log.i("ASYNC", jsonObject.toString());
-
         try {
             JSONArray data = jsonObject.getJSONArray("data");
             for (int i = 0; i < data.length(); i++) {
@@ -71,6 +70,6 @@ public class AsyncGetSpecific extends AsyncTask<String, Void, JSONObject> {
 
     protected String buildUrl(String[] strings) {
         /* + "?page=0&per_page=10&date=2020-03-04" */
-        return "https://free-nba.p.rapidapi.com/" + strings[0] ;
+        return "https://free-nba.p.rapidapi.com/" + strings[0] + "?page=0&per_page=10&date=" + strings[1] ;
     }
 }
