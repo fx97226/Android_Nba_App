@@ -3,6 +3,7 @@ package com.example.android_project.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
@@ -22,6 +23,7 @@ public class TeamFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Teams");
         View v = inflater.inflate(R.layout.fragment_team, container, false);
         CardView a = (CardView) v.findViewById(R.id.team_25);
         a.setOnClickListener(this);

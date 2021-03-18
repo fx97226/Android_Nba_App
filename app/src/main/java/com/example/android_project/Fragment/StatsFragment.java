@@ -2,6 +2,7 @@ package com.example.android_project.Fragment;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -28,6 +29,7 @@ public class StatsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Statistic");
         Log.i("SAVE", "Create View Stats");
         if (stats_adapter == null) {
             stats_adapter = new Stats_Adapter_Table(this.getActivity());
