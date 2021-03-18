@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#E1E1E1E1"
-    tools:context=".TeamFragment">
+    tools:context=".Fragment.TeamFragment">
 
     <LinearLayout
         android:paddingHorizontal="20dp"
@@ -44,7 +44,7 @@
                             android:id="@+id/image_team1"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            android:src="@drawable/rocket" />
+                            android:src="@drawable/rockets" />
 
                         <TextView
                             android:id="@+id/name_team1"

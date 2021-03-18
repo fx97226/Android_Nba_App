@@ -65,7 +65,6 @@ public class Games_Adapter extends BaseAdapter {
     public void onRestoreInstanceState(ArrayList<String> array) throws JSONException {
         items.clear();
         for(int i=0;i<array.size();i++){
-            Log.i("SAVE", array.get(i));
             items.add(new JSONObject(array.get(i)));
         }
     }
@@ -111,7 +110,6 @@ public class Games_Adapter extends BaseAdapter {
         } catch (JSONException e) {
             Log.e("JSON", "Object not found");
         }
-        Log.i("ASYNC", home_team);
         return convertView;
     }
 }

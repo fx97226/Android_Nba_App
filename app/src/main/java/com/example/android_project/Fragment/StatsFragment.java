@@ -1,4 +1,4 @@
-package com.example.android_project;
+package com.example.android_project.Fragment;
 
 import android.os.Bundle;
 
@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.android_project.R;
 import com.example.android_project.adaptor.Stats_Adapter_Table;
 import com.example.android_project.asynctasks.AsyncGetSpecificForStats;
 

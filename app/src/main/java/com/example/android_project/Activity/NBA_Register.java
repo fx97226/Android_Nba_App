@@ -1,4 +1,4 @@
-package com.example.android_project;
+package com.example.android_project.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.android_project.DBhelper;
+import com.example.android_project.R;
 
 public class NBA_Register extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.android_project;
+package com.example.android_project.Fragment;
 
 import android.app.AlertDialog;
 import android.app.Application;
@@ -20,6 +20,7 @@ import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.android_project.R;
 import com.example.android_project.adaptor.Games_Adapter;
 import com.example.android_project.asynctasks.AsyncGetSpecific;
 
@@ -35,10 +36,7 @@ import java.util.Locale;
 public class GamesFragment extends Fragment {
 
     private Games_Adapter game_adapter;
-    private ArrayList<String> game_adapter_SaveState;
-
-    private Boolean loaded = false;
-    private Bundle savedState = new Bundle();
+    AsyncGetSpecific asyncTask;
 
     public GamesFragment() {
         // Required empty public constructor
@@ -76,10 +74,15 @@ public class GamesFragment extends Fragment {
         update.setOnClickListener(v -> {
             TextView tv = (TextView) getActivity().findViewById(R.id.tv);
             String date = (String) tv.getText().toString();
+            if(date.length() == 0){
+                date = " :2019-01-30";
+            }
+            Log.i("ASYNC, " ,date);
             date = date.split(":")[1];
+            Log.i("ASYNC", "Date is : "+ date);
             game_adapter.clear();
             game_adapter.notifyDataSetChanged();
-            AsyncGetSpecific asyncTask = new AsyncGetSpecific(game_adapter);
+            asyncTask = new AsyncGetSpecific(game_adapter);
             asyncTask.execute("games" , date);
         });
 
@@ -87,22 +90,10 @@ public class GamesFragment extends Fragment {
         if(game_adapter == null){
             game_adapter = new Games_Adapter(this.getActivity());
         }
-        if(game_adapter_SaveState != null){
-            try {
-                game_adapter.onRestoreInstanceState(game_adapter_SaveState);
-                list.setAdapter(game_adapter);
-                game_adapter.notifyDataSetChanged();
-                Log.i("SAVE", "Restoration complete");
-            } catch (JSONException e) {
-                e.printStackTrace();
-                Log.i("SAVE", "ERROR in restore");
-            }
-        }else{
-            list.setAdapter(game_adapter);
-            Log.i("SAVE", "Launch ASYNC");
-            AsyncGetSpecific asyncTask = new AsyncGetSpecific(game_adapter);
-            asyncTask.execute("games", "2019-01-30");
-        }
+        list.setAdapter(game_adapter);
+        asyncTask = new AsyncGetSpecific(game_adapter);
+        Log.i("SAVE", "Launch ASYNC");
+        asyncTask.execute("games", "2019-01-30");
         // Inflate the layout for this fragment
         //CardView main_card = (CardView) view.findViewById(R.id.card_main);
         return view;

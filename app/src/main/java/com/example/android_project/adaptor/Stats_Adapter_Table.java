@@ -2,7 +2,6 @@ package com.example.android_project.adaptor;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
@@ -10,8 +9,6 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.example.android_project.MainActivity;
-import com.example.android_project.NBA_login;
 import com.example.android_project.R;
 
 import org.json.JSONException;

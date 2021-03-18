@@ -11,11 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Project">
-        <activity android:name=".NBA_Team_stat"></activity>
-        <activity android:name=".NBA_Home" />
-        <activity android:name=".NBA_Register" />
-        <activity android:name=".NBA_login" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.NBA_Team_stat"></activity>
+        <activity android:name=".Activity.NBA_Home" />
+        <activity android:name=".Activity.NBA_Register" />
+        <activity android:name=".Activity.NBA_login" />
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

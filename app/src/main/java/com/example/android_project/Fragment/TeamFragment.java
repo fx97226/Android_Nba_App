@@ -1,4 +1,4 @@
-package com.example.android_project;
+package com.example.android_project.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,10 +6,12 @@ import android.os.Bundle;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.android_project.Activity.NBA_Team_stat;
+import com.example.android_project.R;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -65,67 +67,67 @@ public class TeamFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_team, container, false);
-        CardView a = (CardView) v.findViewById(R.id.team_blazers);
+        CardView a = (CardView) v.findViewById(R.id.team_25);
         a.setOnClickListener(this);
-        CardView b = (CardView) v.findViewById(R.id.team_bucks);
+        CardView b = (CardView) v.findViewById(R.id.team_17);
         b.setOnClickListener(this);
-        CardView b1 = (CardView) v.findViewById(R.id.team_bulls);
+        CardView b1 = (CardView) v.findViewById(R.id.team_6);
         b1.setOnClickListener(this);
-        CardView c = (CardView) v.findViewById(R.id.team_cavaliers);
+        CardView c = (CardView) v.findViewById(R.id.team_5);
         c.setOnClickListener(this);
-        CardView c1 = (CardView) v.findViewById(R.id.team_celtics);
+        CardView c1 = (CardView) v.findViewById(R.id.team_13);
         c1.setOnClickListener(this);
-        CardView c2 = (CardView) v.findViewById(R.id.team_clippers);
+        CardView c2 = (CardView) v.findViewById(R.id.team_2);
         c2.setOnClickListener(this);
-        CardView d = (CardView) v.findViewById(R.id.team_grizzlies);
+        CardView d = (CardView) v.findViewById(R.id.team_1);
         d.setOnClickListener(this);
-        CardView e = (CardView) v.findViewById(R.id.team_hawks);
+        CardView e = (CardView) v.findViewById(R.id.team_15);
         e.setOnClickListener(this);
-        CardView f = (CardView) v.findViewById(R.id.team_heat);
+        CardView f = (CardView) v.findViewById(R.id.team_16);
         f.setOnClickListener(this);
-        CardView g = (CardView) v.findViewById(R.id.team_hornets);
+        CardView g = (CardView) v.findViewById(R.id.team_4);
         g.setOnClickListener(this);
-        CardView h = (CardView) v.findViewById(R.id.team_jazz);
+        CardView h = (CardView) v.findViewById(R.id.team_26);
         h.setOnClickListener(this);
-        CardView i = (CardView) v.findViewById(R.id.team_kings);
+        CardView i = (CardView) v.findViewById(R.id.team_29);
         i.setOnClickListener(this);
-        CardView j = (CardView) v.findViewById(R.id.team_knicks);
+        CardView j = (CardView) v.findViewById(R.id.team_14);
         j.setOnClickListener(this);
-        CardView k = (CardView) v.findViewById(R.id.team_lakers);
+        CardView k = (CardView) v.findViewById(R.id.team_20);
         k.setOnClickListener(this);
-        CardView l = (CardView) v.findViewById(R.id.team_magic);
+        CardView l = (CardView) v.findViewById(R.id.team_7);
         l.setOnClickListener(this);
-        CardView m = (CardView) v.findViewById(R.id.team_mavericks);
+        CardView m = (CardView) v.findViewById(R.id.team_22);
         m.setOnClickListener(this);
-        CardView n = (CardView) v.findViewById(R.id.team_nets);
+        CardView n = (CardView) v.findViewById(R.id.team_8);
         n.setOnClickListener(this);
-        CardView o = (CardView) v.findViewById(R.id.team_nuggets);
+        CardView o = (CardView) v.findViewById(R.id.team_3);
         o.setOnClickListener(this);
-        CardView p = (CardView) v.findViewById(R.id.team_pacers);
+        CardView p = (CardView) v.findViewById(R.id.team_19);
         p.setOnClickListener(this);
-        CardView p1 = (CardView) v.findViewById(R.id.team_pelicans);
+        CardView p1 = (CardView) v.findViewById(R.id.team_12);
         p1.setOnClickListener(this);
-        CardView p2 = (CardView) v.findViewById(R.id.team_pistons);
+        CardView p2 = (CardView) v.findViewById(R.id.team_28);
         p2.setOnClickListener(this);
-        CardView q = (CardView) v.findViewById(R.id.team_raptors);
+        CardView q = (CardView) v.findViewById(R.id.team_9);
         q.setOnClickListener(this);
-        CardView r = (CardView) v.findViewById(R.id.team_rockets);
+        CardView r = (CardView) v.findViewById(R.id.team_23);
         r.setOnClickListener(this);
-        CardView s = (CardView) v.findViewById(R.id.team_spurs);
+        CardView s = (CardView) v.findViewById(R.id.team_11);
         s.setOnClickListener(this);
-        CardView t = (CardView) v.findViewById(R.id.team_suns);
+        CardView t = (CardView) v.findViewById(R.id.team_24);
         t.setOnClickListener(this);
         CardView u = (CardView) v.findViewById(R.id.team_supersonic);
         u.setOnClickListener(this);
-        CardView v1 = (CardView) v.findViewById(R.id.team_timberwolves);
+        CardView v1 = (CardView) v.findViewById(R.id.team_18);
         v1.setOnClickListener(this);
-        CardView v2 = (CardView) v.findViewById(R.id.team_thunder);
+        CardView v2 = (CardView) v.findViewById(R.id.team_21);
         v2.setOnClickListener(this);
-        CardView w = (CardView) v.findViewById(R.id.team_warriors);
+        CardView w = (CardView) v.findViewById(R.id.team_10);
         w.setOnClickListener(this);
-        CardView x = (CardView) v.findViewById(R.id.team_wizards);
+        CardView x = (CardView) v.findViewById(R.id.team_30);
         x.setOnClickListener(this);
-        CardView y = (CardView) v.findViewById(R.id.team_76ers);
+        CardView y = (CardView) v.findViewById(R.id.team_27);
         y.setOnClickListener(this);
         return v;
         // Inflate the layout for this fragment
@@ -135,38 +137,40 @@ public class TeamFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.team_blazers:
-            case R.id.team_bulls:
-            case R.id.team_cavaliers:
-            case R.id.team_celtics:
-            case R.id.team_clippers:
-            case R.id.team_grizzlies:
-            case R.id.team_hawks:
-            case R.id.team_heat:
-            case R.id.team_hornets:
-            case R.id.team_jazz:
-            case R.id.team_kings:
-            case R.id.team_knicks:
-            case R.id.team_lakers:
-            case R.id.team_magic:
-            case R.id.team_mavericks:
-            case R.id.team_nets:
-            case R.id.team_nuggets:
-            case R.id.team_pacers:
-            case R.id.team_pelicans:
-            case R.id.team_pistons:
-            case R.id.team_raptors:
-            case R.id.team_rockets:
-            case R.id.team_76ers:
-            case R.id.team_spurs:
-            case R.id.team_suns:
-            case R.id.team_supersonic:
-            case R.id.team_timberwolves:
-            case R.id.team_thunder:
-            case R.id.team_warriors:
-            case R.id.team_wizards:
-     case R.id.team_bucks:
+            case R.id.team_1:
+            case R.id.team_2:
+            case R.id.team_3:
+            case R.id.team_4:
+            case R.id.team_5:
+            case R.id.team_6:
+            case R.id.team_7:
+            case R.id.team_8:
+            case R.id.team_9:
+            case R.id.team_10:
+            case R.id.team_11:
+            case R.id.team_12:
+            case R.id.team_13:
+            case R.id.team_14:
+            case R.id.team_15:
+            case R.id.team_16:
+            case R.id.team_17:
+            case R.id.team_18:
+            case R.id.team_19:
+            case R.id.team_20:
+            case R.id.team_21:
+            case R.id.team_22:
+            case R.id.team_23:
+            case R.id.team_24:
+            case R.id.team_25:
+            case R.id.team_26:
+            case R.id.team_27:
+            case R.id.team_28:
+            case R.id.team_29:
+            case R.id.team_30:
                 Intent intent = new Intent(getActivity(), NBA_Team_stat.class);
+                CardView v2 = (CardView) v.findViewById(v.getId());
+                String team_number = getResources().getResourceName(v2.getId());
+                intent.putExtra("NAME_TEAM", team_number);
                 startActivity(intent);
                 break;
         }
