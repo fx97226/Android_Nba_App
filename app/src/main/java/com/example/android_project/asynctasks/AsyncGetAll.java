@@ -53,11 +53,10 @@ public class AsyncGetAll extends AsyncTask<String, Void, JSONObject> {
         Log.i("ASYNC", jsonObject.toString());
         try {
             JSONArray data = jsonObject.getJSONArray("data");
-            if(data.length() == 0){
+            if (data.length() == 0) {
                 adapter.add(new JSONObject("{\"data\": \"No Games\"}"));
-                Log.i("ASYNC", new JSONObject("{\"data\":\"No Games\"}").toString());
                 adapter.notifyDataSetChanged();
-            }else{
+            } else {
                 for (int i = 0; i < data.length(); i++) {
                     adapter.add(data.getJSONObject(i));
                     adapter.notifyDataSetChanged();
@@ -70,14 +69,11 @@ public class AsyncGetAll extends AsyncTask<String, Void, JSONObject> {
     }
 
     protected String buildUrl(String[] strings) {
-        switch (strings.length){
-            case 1:
-                return "https://free-nba.p.rapidapi.com/" + strings[0];
-            case 2:
-                if(!strings[0].equals("players"))return "https://free-nba.p.rapidapi.com/" + strings[0] + "?dates[]=" + strings[1];
-                return "https://free-nba.p.rapidapi.com/" + strings[0];
-            default:
-                return "https://free-nba.p.rapidapi.com/games";
+        if (strings.length == 2) {
+            if (!strings[0].equals("players"))
+                return "https://free-nba.p.rapidapi.com/" + strings[0] + "?dates[]=" + strings[1];
+            return "https://free-nba.p.rapidapi.com/" + strings[0];
         }
+        return "https://free-nba.p.rapidapi.com/" + strings[0];
     }
 }

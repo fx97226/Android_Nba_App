@@ -55,9 +55,11 @@ public class NBA_Home extends AppCompatActivity {
                 intDq.remove(id);
             }
             intDq.push(id);
-            loadFragment(getFragment(item.getItemId()));
+            if( bottomNavigationView.getSelectedItemId() != item.getItemId()) loadFragment(getFragment(item.getItemId()));
             return true;
         });
+
+
     }
 
     private Fragment getFragment(int itemId) {
