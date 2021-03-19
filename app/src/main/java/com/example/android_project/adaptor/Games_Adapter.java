@@ -1,5 +1,6 @@
 package com.example.android_project.adaptor;
 
+import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,7 +10,13 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+
+import com.example.android_project.Fragment.StatsFragment;
 import com.example.android_project.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,6 +26,8 @@ import java.util.ArrayList;
 public class Games_Adapter extends BaseAdapter {
     private final Context context; //context
     private ArrayList<JSONObject> items; //data source of the list adapter
+
+    private StatsFragment fragment = new StatsFragment("45237");
 
     // CONSTRUCTOR
     public Games_Adapter(Context context) {
@@ -124,9 +133,29 @@ public class Games_Adapter extends BaseAdapter {
                 card_date.setText(game.getString("date").substring(0, 10));
                 score_team1.setText(game.getString("home_team_score"));
                 score_team2.setText(game.getString("visitor_team_score"));
+
+                convertView.findViewById(R.id.card_main).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        try {
+                            Log.i("ASYNC", "J'ai cliqué sur le game n* " +game.getString("id") );
+                            fragment = new StatsFragment(game.getString("id"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        AppCompatActivity activity = (AppCompatActivity) context;
+                        View rootView = ((Activity) context).getWindow().getDecorView().findViewById(android.R.id.content);
+                        BottomNavigationView bottomNavigationView = rootView.findViewById(R.id.bottom_nav_id);
+                        bottomNavigationView.setSelectedItemId(R.id.statistic_id);
+                        activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment, fragment, fragment.getClass().getSimpleName()).commit();
+                    }
+                });
+
             } catch (JSONException e) {
                 Log.e("JSON", "Object not found");
             }
+
+
         } else {
             if (convertView == null) {
                 convertView = LayoutInflater.from(context).inflate(R.layout.empty_data, parent, false);

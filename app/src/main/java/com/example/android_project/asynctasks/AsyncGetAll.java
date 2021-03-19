@@ -14,10 +14,10 @@ import org.json.JSONObject;
 
 import cz.msebera.android.httpclient.Header;
 
-public class AsyncGetSpecific extends AsyncTask<String, Void, JSONObject> {
+public class AsyncGetAll extends AsyncTask<String, Void, JSONObject> {
     private final Games_Adapter adapter;
 
-    public AsyncGetSpecific(Games_Adapter adapter) {
+    public AsyncGetAll(Games_Adapter adapter) {
         this.adapter = adapter;
     }
 
@@ -70,7 +70,14 @@ public class AsyncGetSpecific extends AsyncTask<String, Void, JSONObject> {
     }
 
     protected String buildUrl(String[] strings) {
-        /* + "?page=0&per_page=10&date=2020-03-04" */
-        return "https://free-nba.p.rapidapi.com/" + strings[0] + "?dates[]=" + strings[1];
+        switch (strings.length){
+            case 1:
+                return "https://free-nba.p.rapidapi.com/" + strings[0];
+            case 2:
+                if(!strings[0].equals("players"))return "https://free-nba.p.rapidapi.com/" + strings[0] + "?dates[]=" + strings[1];
+                return "https://free-nba.p.rapidapi.com/" + strings[0];
+            default:
+                return "https://free-nba.p.rapidapi.com/games";
+        }
     }
 }

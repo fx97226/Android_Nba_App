@@ -1,13 +1,10 @@
 package com.example.android_project.Fragment;
 
 import android.app.AlertDialog;
-import android.app.Application;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
@@ -23,13 +20,9 @@ import android.widget.TextView;
 
 import com.example.android_project.R;
 import com.example.android_project.adaptor.Games_Adapter;
-import com.example.android_project.asynctasks.AsyncGetSpecific;
-
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.example.android_project.asynctasks.AsyncGetAll;
 
 import java.text.DateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -37,7 +30,7 @@ import java.util.Locale;
 public class GamesFragment extends Fragment {
 
     private Games_Adapter game_adapter;
-    AsyncGetSpecific asyncTask;
+    AsyncGetAll asyncTask;
 
     public GamesFragment() {
         // Required empty public constructor
@@ -82,7 +75,7 @@ public class GamesFragment extends Fragment {
             date = date.split(":")[1];
             game_adapter.clear();
             game_adapter.notifyDataSetChanged();
-            asyncTask = new AsyncGetSpecific(game_adapter);
+            asyncTask = new AsyncGetAll(game_adapter);
             asyncTask.execute("games", date);
         });
 
@@ -91,7 +84,7 @@ public class GamesFragment extends Fragment {
             game_adapter = new Games_Adapter(this.getActivity());
         }
         list.setAdapter(game_adapter);
-        asyncTask = new AsyncGetSpecific(game_adapter);
+        asyncTask = new AsyncGetAll(game_adapter);
         asyncTask.execute("games", "2021-02-08");
         return view;
     }

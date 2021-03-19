@@ -16,9 +16,18 @@ import com.example.android_project.asynctasks.AsyncGetSpecificForStats;
 
 public class StatsFragment extends Fragment {
     private Stats_Adapter_Table stats_adapter;
+    private String game_id = null;
 
-    public StatsFragment() {
-        // Required empty public constructor
+    public StatsFragment(String game_id) {
+        this.game_id = game_id;
+    }
+
+    public void launchStats(String game_id){
+        this.game_id = game_id;
+        this.stats_adapter.Clear();
+        AsyncGetSpecificForStats asyncTask = new AsyncGetSpecificForStats(stats_adapter);
+        Log.i("ASYNC", "Game is : " + game_id);
+        asyncTask.execute("stats" , game_id);
     }
 
     @Override
@@ -32,13 +41,15 @@ public class StatsFragment extends Fragment {
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Statistic");
         Log.i("SAVE", "Create View Stats");
         if (stats_adapter == null) {
+            Log.i("ASYNC", "Stats_adapter == null");
             stats_adapter = new Stats_Adapter_Table(this.getActivity());
         }
         if (stats_adapter.getCount() > 0) {
             stats_adapter.RestoreState(this.getActivity());
         } else {
             AsyncGetSpecificForStats asyncTask = new AsyncGetSpecificForStats(stats_adapter);
-            asyncTask.execute("stats");
+            Log.i("ASYNC", "Game is : " + game_id);
+            asyncTask.execute("stats" , game_id);
         }
 
         // Inflate the layout for this fragment

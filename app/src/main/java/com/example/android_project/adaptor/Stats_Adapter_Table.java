@@ -27,7 +27,6 @@ public class Stats_Adapter_Table {
 
     // ADD FUNCTION FOR THE LIST
     public void add(JSONObject string) {
-        Log.i("SAVE", String.valueOf(string));
         this.items.add(string);
     }
 
@@ -37,6 +36,10 @@ public class Stats_Adapter_Table {
 
     public Object getItem(int position) {
         return items.get(position);
+    }
+
+    public void Clear(){
+        items.clear();
     }
 
     public void RestoreState(Context context) {
@@ -59,22 +62,16 @@ public class Stats_Adapter_Table {
         try {
             tv = (TextView) tableRow.findViewById(R.id.cell_1);
             String input = stats.getJSONObject("player").getString("first_name") + " " + stats.getJSONObject("player").getString("last_name");
-            Log.i("ASYNC", " player : " + input);
             tv.setText(input);
             tv = (TextView) tableRow.findViewById(R.id.cell_2);
-            Log.i("ASYNC", " pts : " + String.valueOf(stats.getString("pts")));
             tv.setText(stats.getString("pts"));
             tv = (TextView) tableRow.findViewById(R.id.cell_3);
-            Log.i("ASYNC", " reb : " + String.valueOf(stats.getString("reb")));
             tv.setText(stats.getString("reb"));
             tv = (TextView) tableRow.findViewById(R.id.cell_4);
-            Log.i("ASYNC", " stl : " + String.valueOf(stats.getString("stl")));
             tv.setText(stats.getString("stl"));
             tv = (TextView) tableRow.findViewById(R.id.cell_5);
-            Log.i("ASYNC", " turn : " + String.valueOf(stats.getString("turnover")));
             tv.setText(stats.getString("turnover"));
             tv = (TextView) tableRow.findViewById(R.id.cell_6);
-            Log.i("ASYNC", " min : " + String.valueOf(stats.getString("min")));
             tv.setText(stats.getString("min"));
             table.addView(tableRow);
         } catch (JSONException e) {

@@ -4,27 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Base64;
 import android.util.Log;
-import android.widget.TextView;
 
 import com.example.android_project.R;
-import com.example.android_project.asynctasks.AsyncGetSpecific;
 import com.example.android_project.asynctasks.AsyncGetSpecificTeam;
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.JsonHttpResponseHandler;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import cz.msebera.android.httpclient.Header;
 
 public class NBA_Team_stat extends AppCompatActivity {
     AsyncGetSpecificTeam async = new AsyncGetSpecificTeam(this);
