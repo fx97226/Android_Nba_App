@@ -25,7 +25,6 @@ public class AsyncGetSpecificTeam extends AsyncTask<String, Void, JSONObject> {
 
     @Override
     protected JSONObject doInBackground(String... strings) {
-        Log.i("ASYNC", "Team doInBackground");
         final JSONObject[] response = {null};
         SyncHttpClient client = new SyncHttpClient();
         // Add our Key ( in clear)  for the API

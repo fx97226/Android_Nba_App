@@ -135,8 +135,8 @@ public class Games_Adapter extends BaseAdapter {
                             // We update our Navigation view ( Our bottom menu )
                             BottomNavigationView bottomNavigationView = rootView.findViewById(R.id.bottom_nav_id);
                             bottomNavigationView.setSelectedItemId(R.id.statistic_id);
-                            NBA_Home.MyStatsFragment = StatsFragment.newInstance(game.getString("id"));
-                            ((AppCompatActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.fragment,  NBA_Home.MyStatsFragment,  "StatsFragment").commit();
+                            NBA_Home.game_id = game.getString("id");
+                            ((AppCompatActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.fragment, StatsFragment.newInstance(game.getString("id")),  "StatsFragment").commit();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

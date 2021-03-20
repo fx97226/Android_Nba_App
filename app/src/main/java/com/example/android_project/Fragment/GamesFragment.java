@@ -160,12 +160,8 @@ public class GamesFragment extends Fragment {
             String strday = String.valueOf(day);
             if (month < 10) strmonth = "0" + String.valueOf(month);
             if (day < 10) {
-                strday = "0" + String.valueOf(day);
-            } else if (day > 10 & day < 20) {
-                strday = "1" + String.valueOf(day);
-            } else if (day > 20 & day < 30) {
-                strday = "2" + String.valueOf(day);
-            } else strday = "3" + String.valueOf(day);
+                strday = "0" + day;
+            }
             Log.i("DATE", year + "-" + strmonth + "-" + strday);
             Date chosenDate = cal.getTime();
 

@@ -44,6 +44,11 @@ public class Stats_Adapter_Table {
 
     public void Clear() {
         items.clear();
+        View rootView = ((Activity) context).getWindow().getDecorView().findViewById(android.R.id.content);
+        TableLayout table = (TableLayout) rootView.findViewById(R.id.tblData);
+        table.removeAllViews();
+        TableRow tableRow = (TableRow) ((Activity) context).getLayoutInflater().inflate(R.layout.fragment_stats_header, null);
+        table.addView(tableRow);
     }
 
     // If the data has already been download we just have to restore the Layout

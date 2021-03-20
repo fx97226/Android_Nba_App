@@ -25,7 +25,7 @@ public class StatsFragment extends Fragment {
     }
 
     //NewInstance to pass game_id information in the fragment
-    public static StatsFragment newInstance(String param1){
+    public static StatsFragment newInstance(String param1) {
         StatsFragment fragment = new StatsFragment();
         Bundle args = new Bundle();
         args.putString("game_id", param1);
@@ -44,20 +44,19 @@ public class StatsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Statistic");
-        if(this.game_id == null) {
-            this.game_id ="127869"; // Security
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Statistic");
+        if (this.game_id == null) {
+            this.game_id = "127869"; // Security
         }
         // If we don't have an adaptor
         if (stats_adapter == null) {
+            Log.i("ASYNC", "Create 1");
             stats_adapter = new Stats_Adapter_Table(this.getActivity());
             // We launch our asynctask to retrieve data from the API
-            AsyncGetSpecificForStats asyncTask = new AsyncGetSpecificForStats(stats_adapter);
-            asyncTask.execute("stats" , game_id);
-        }else {
-            // If we do => we just restore our rows
-            stats_adapter.RestoreState(this.getActivity());
         }
+        Log.i("ASYNC", "Create 3");
+        AsyncGetSpecificForStats asyncTask = new AsyncGetSpecificForStats(stats_adapter);
+        asyncTask.execute("stats", game_id);
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_stats_temp, container, false);
     }

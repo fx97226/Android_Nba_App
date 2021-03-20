@@ -23,8 +23,10 @@ public class NBA_Home extends AppCompatActivity {
     boolean flag = true;
     private Fragment MyGameFragment = null;
     private Fragment MyTeamFragment = null;
-    public static Fragment MyStatsFragment = null;
+    private Fragment MyStatsFragment = null;
     private Fragment MyHomeFragment = null;
+
+    public static String game_id = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +73,11 @@ public class NBA_Home extends AppCompatActivity {
                 return MyGameFragment;
             case R.id.statistic_id:
                 bottomNavigationView.getMenu().getItem(2).setChecked(true);
-                if(MyStatsFragment != null) return MyStatsFragment;
+                if(!game_id.equals("") ){
+                    Log.i("ASYNC","Je launch here");
+                    MyStatsFragment = StatsFragment.newInstance(game_id);
+                    return MyStatsFragment;
+                }
                 if (MyGameFragment == null){
                     bottomNavigationView.getMenu().getItem(1).setChecked(true);
                     MyGameFragment = new GamesFragment();
