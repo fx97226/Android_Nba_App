@@ -17,6 +17,7 @@ public class NBA_Team_stat extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_n_b_a__team_stat);
         String TeamID = getIntent().getStringExtra("TEAM_ID");
+        //Retrieve the Team_ID from the intent
         TeamID = TeamID.split("/")[1].split("_")[1];
         async.execute(TeamID);
     }

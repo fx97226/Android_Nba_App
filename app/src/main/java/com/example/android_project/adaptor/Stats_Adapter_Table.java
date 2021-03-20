@@ -52,6 +52,7 @@ public class Stats_Adapter_Table {
     }
 
     // If the data has already been download we just have to restore the Layout
+    // Finally not used because it was creating duplication of data due tu the use of our navigationBar
     public void RestoreState(Context context) {
         this.context = context;
         new Handler().postDelayed(new Runnable() {

@@ -26,6 +26,7 @@ public class NBA_Home extends AppCompatActivity {
     private Fragment MyStatsFragment = null;
     private Fragment MyHomeFragment = null;
 
+    //To create History for stats fragment
     public static String game_id = "";
 
     @Override
@@ -56,7 +57,8 @@ public class NBA_Home extends AppCompatActivity {
                 intDq.remove(id);
             }
             intDq.push(id);
-            if( bottomNavigationView.getSelectedItemId() != item.getItemId()) loadFragment(getFragment(item.getItemId()));
+            if (bottomNavigationView.getSelectedItemId() != item.getItemId())
+                loadFragment(getFragment(item.getItemId()));
             return true;
         });
     }
@@ -69,16 +71,15 @@ public class NBA_Home extends AppCompatActivity {
                 return MyHomeFragment;
             case R.id.game_id:
                 bottomNavigationView.getMenu().getItem(1).setChecked(true);
-                if (MyGameFragment == null)MyGameFragment = new GamesFragment();
+                if (MyGameFragment == null) MyGameFragment = new GamesFragment();
                 return MyGameFragment;
             case R.id.statistic_id:
-                bottomNavigationView.getMenu().getItem(2).setChecked(true);
-                if(!game_id.equals("") ){
-                    Log.i("ASYNC","Je launch here");
+                if (!game_id.equals("")) {
+                    bottomNavigationView.getMenu().getItem(2).setChecked(true);
                     MyStatsFragment = StatsFragment.newInstance(game_id);
                     return MyStatsFragment;
                 }
-                if (MyGameFragment == null){
+                if (MyGameFragment == null) {
                     bottomNavigationView.getMenu().getItem(1).setChecked(true);
                     MyGameFragment = new GamesFragment();
                 }
@@ -93,13 +94,8 @@ public class NBA_Home extends AppCompatActivity {
     }
 
     private void loadFragment(Fragment fragment) {
-        if(fragment != null)getSupportFragmentManager().beginTransaction().replace(R.id.fragment, fragment, fragment.getClass().getSimpleName()).commit();
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        Log.i("SAVE", "Je suis dans le save instance NBA_Home");
+        if (fragment != null)
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment, fragment, fragment.getClass().getSimpleName()).commit();
     }
 
     @Override

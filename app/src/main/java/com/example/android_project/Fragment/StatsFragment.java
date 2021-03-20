@@ -50,11 +50,10 @@ public class StatsFragment extends Fragment {
         }
         // If we don't have an adaptor
         if (stats_adapter == null) {
-            Log.i("ASYNC", "Create 1");
             stats_adapter = new Stats_Adapter_Table(this.getActivity());
-            // We launch our asynctask to retrieve data from the API
+
         }
-        Log.i("ASYNC", "Create 3");
+        // We launch our asynctask to retrieve data from the API
         AsyncGetSpecificForStats asyncTask = new AsyncGetSpecificForStats(stats_adapter);
         asyncTask.execute("stats", game_id);
         // Inflate the layout for this fragment

@@ -97,52 +97,19 @@ public class GamesFragment extends Fragment {
             int month = calendar.get(Calendar.MONTH);
             int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-            /*
-                We should use THEME_HOLO_LIGHT, THEME_HOLO_DARK or THEME_TRADITIONAL only.
-
-                The THEME_DEVICE_DEFAULT_LIGHT and THEME_DEVICE_DEFAULT_DARK does not work
-                perfectly. This two theme set disable color of disabled dates but users can
-                select the disabled dates also.
-
-                Other three themes act perfectly after defined enabled date range of date picker.
-                Those theme completely hide the disable dates from date picker object.
-             */
             DatePickerDialog dpd = new DatePickerDialog(getActivity(),
                     AlertDialog.THEME_HOLO_LIGHT, this, year, month, day);
-
-            /*
-                add(int field, int value)
-                    Adds the given amount to a Calendar field.
-             */
-            // Add 3 days to Calendar
             calendar.add(Calendar.DATE, 3);
-
-            /*
-                getTimeInMillis()
-                    Returns the time represented by this Calendar,
-                    recomputing the time from its fields if necessary.
-
-                getDatePicker()
-                Gets the DatePicker contained in this dialog.
-
-                setMinDate(long minDate)
-                    Sets the minimal date supported by this NumberPicker
-                    in milliseconds since January 1, 1970 00:00:00 in getDefault() time zone.
-
-                setMaxDate(long maxDate)
-                    Sets the maximal date supported by this DatePicker in milliseconds
-                    since January 1, 1970 00:00:00 in getDefault() time zone.
-             */
 
             // Set the Calendar new date as maximum date of date picker
             Calendar c = Calendar.getInstance();
+            //The user cannot go further than the dates from API
+            // Could be automatic but no request allow us to get the range of the games.
             c.set(2021, 1, 8);//Year,Mounth -1,Day
             dpd.getDatePicker().setMaxDate(c.getTimeInMillis());
             // Set the Calendar Date as minimum date of date picker
-            c.set(2019, 0, 30);//Year,Mounth -1,Day
+            c.set(2019, 0, 30);
             dpd.getDatePicker().setMinDate(c.getTimeInMillis());
-
-            // So, now date picker selectable date range is from Jan 2019 to Feb 2021 days only
 
             // Return the DatePickerDialog
             return dpd;
@@ -152,24 +119,15 @@ public class GamesFragment extends Fragment {
             // Do something with the chosen date
             TextView tv = (TextView) getActivity().findViewById(R.id.tv);
 
-            // Create a Date variable/object with user chosen date
-            Calendar cal = Calendar.getInstance();
-            cal.setTimeInMillis(0);
-            cal.set(year, month, day, 0, 0, 0);
+            // Create a valid YYYY-MM-DD date with user chosen date
             String strmonth = String.valueOf(month);
             String strday = String.valueOf(day);
-            if (month < 10) strmonth = "0" + String.valueOf(month);
+            if (month < 10) strmonth = "0" + month;
             if (day < 10) {
                 strday = "0" + day;
             }
             Log.i("DATE", year + "-" + strmonth + "-" + strday);
-            Date chosenDate = cal.getTime();
-
-            // Format the date using style and locale
-            DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.FRANCE);
-            String formattedDate = df.format(chosenDate);
-            formattedDate = "List of all the games of :" + year + "-" + strmonth + "-" + strday;
-
+            String formattedDate = "List of all the games of :" + year + "-" + strmonth + "-" + strday;
             // Display the chosen date to app interface
             tv.setText(formattedDate);
         }

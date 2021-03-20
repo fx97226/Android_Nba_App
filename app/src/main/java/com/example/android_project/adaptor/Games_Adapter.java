@@ -73,7 +73,7 @@ public class Games_Adapter extends BaseAdapter {
                 data = false;
             }
         } catch (JSONException e) {
-            // If error catch means that we have data
+            // If error catch means that we have data so data can stay true
         }
 
         /**  If data we build our Games Card */
@@ -131,10 +131,11 @@ public class Games_Adapter extends BaseAdapter {
                     @Override
                     public void onClick(View v) {
                         try {
-                            View rootView = ((Activity) context).getWindow().getDecorView().findViewById(android.R.id.content);
                             // We update our Navigation view ( Our bottom menu )
+                            View rootView = ((Activity) context).getWindow().getDecorView().findViewById(android.R.id.content);
                             BottomNavigationView bottomNavigationView = rootView.findViewById(R.id.bottom_nav_id);
                             bottomNavigationView.setSelectedItemId(R.id.statistic_id);
+                            //Store the game_id in our NBA_Home
                             NBA_Home.game_id = game.getString("id");
                             ((AppCompatActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.fragment, StatsFragment.newInstance(game.getString("id")),  "StatsFragment").commit();
                         } catch (JSONException e) {
