@@ -26,9 +26,12 @@ public class AsyncGetSpecificForStats extends AsyncTask<String, Void, JSONObject
         final JSONObject[] response = {null};
         if (strings[0].equals("stats")) {
             SyncHttpClient client = new SyncHttpClient();
+            // Add our Key ( in clear)  for the API
+            // not safe if the API is private but here no problem
             client.addHeader("x-rapidapi-key", "987a652a7cmshb9247e1fe068886p1ef584jsn4df5ed246ff7");
             client.addHeader("x-rapidapi-host", "free-nba.p.rapidapi.com");
             String url = buildUrl(strings);
+            // Launch our request
             client.get(url, new JsonHttpResponseHandler() {
                 public void onSuccess(int statusCode, Header[] headers, JSONObject json) {
                     response[0] = json;
@@ -51,9 +54,13 @@ public class AsyncGetSpecificForStats extends AsyncTask<String, Void, JSONObject
 
     @Override
     protected void onPostExecute(JSONObject jsonObject) {
+
         try {
             JSONArray data = jsonObject.getJSONArray("data");
+            // We clear our adaptor to make sure no data is still stored from our last API call
+            adapter.Clear();
             for (int i = 0; i < data.length(); i++) {
+                // We add each data rows in our adaptor to inflate our tableRows
                 adapter.add(data.getJSONObject(i));
                 adapter.UpdateRows(i);
             }
@@ -65,7 +72,6 @@ public class AsyncGetSpecificForStats extends AsyncTask<String, Void, JSONObject
 
     protected String buildUrl(String[] strings) {
         if (strings.length == 2) {
-            Log.i("ASYNC", "String 1 is : " + strings[1]);
             return "https://free-nba.p.rapidapi.com/" + strings[0] + "?game_ids[]=" + strings[1];
         }
         Log.i("ASYNC", "No string 1");

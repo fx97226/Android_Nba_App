@@ -128,7 +128,7 @@ public class TeamFragment extends Fragment implements View.OnClickListener {
                 Intent intent = new Intent(getActivity(), NBA_Team_stat.class);
                 CardView v2 = (CardView) v.findViewById(v.getId());
                 String team_number = getResources().getResourceName(v2.getId());
-                intent.putExtra("NAME_TEAM", team_number);
+                intent.putExtra("TEAM_ID", team_number);
                 startActivity(intent);
                 break;
         }

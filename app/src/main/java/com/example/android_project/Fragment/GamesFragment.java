@@ -53,7 +53,6 @@ public class GamesFragment extends Fragment {
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Games");
         View view = inflater.inflate(R.layout.fragment_games, container, false);
         ListView list = (ListView) view.findViewById(R.id.list);
-
         Button btn = (Button) view.findViewById(R.id.button);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,10 +81,11 @@ public class GamesFragment extends Fragment {
         Log.i("FRAG", "Je suis dans le GamesFragment");
         if (game_adapter == null) {
             game_adapter = new Games_Adapter(this.getActivity());
+            list.setAdapter(game_adapter);
+            asyncTask = new AsyncGetAll(game_adapter);
+            asyncTask.execute("games", "2021-02-08");
         }
         list.setAdapter(game_adapter);
-        asyncTask = new AsyncGetAll(game_adapter);
-        asyncTask.execute("games", "2021-02-08");
         return view;
     }
 

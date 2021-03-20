@@ -28,9 +28,12 @@ public class AsyncGetSpecificTeam extends AsyncTask<String, Void, JSONObject> {
         Log.i("ASYNC", "Team doInBackground");
         final JSONObject[] response = {null};
         SyncHttpClient client = new SyncHttpClient();
+        // Add our Key ( in clear)  for the API
+        // not safe if the API is private but here no problem
         client.addHeader("x-rapidapi-key", "987a652a7cmshb9247e1fe068886p1ef584jsn4df5ed246ff7");
         client.addHeader("x-rapidapi-host", "free-nba.p.rapidapi.com");
         String url = buildUrl(strings);
+        // Launch our request
         client.get(url, new JsonHttpResponseHandler() {
             public void onSuccess(int statusCode, Header[] headers, JSONObject json) {
                 response[0] = json;
@@ -48,7 +51,7 @@ public class AsyncGetSpecificTeam extends AsyncTask<String, Void, JSONObject> {
 
     @Override
     protected void onPostExecute(JSONObject jsonObject) {
-        Log.i("ASYNC", jsonObject.toString());
+        // Retrieve the activity and update all textViews and images
         Activity activity = (Activity) myActivity;
         ImageView image_team1 = (ImageView) activity.findViewById(R.id.img);
         TextView full_name = (TextView) activity.findViewById(R.id.full_name);
@@ -78,7 +81,6 @@ public class AsyncGetSpecificTeam extends AsyncTask<String, Void, JSONObject> {
     }
 
     protected String buildUrl(String[] strings) {
-        /*  */
         return "https://free-nba.p.rapidapi.com/teams/" + strings[0];
     }
 }

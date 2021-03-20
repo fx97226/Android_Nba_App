@@ -16,6 +16,10 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+/**
+ * Stats_Adapter_Table
+ * Custom adaptor used to implemented TableLayout with Rows.
+ */
 public class Stats_Adapter_Table {
     private Context context; //context
     private final ArrayList<JSONObject> items; //data source of the list adapter
@@ -38,10 +42,11 @@ public class Stats_Adapter_Table {
         return items.get(position);
     }
 
-    public void Clear(){
+    public void Clear() {
         items.clear();
     }
 
+    // If the data has already been download we just have to restore the Layout
     public void RestoreState(Context context) {
         this.context = context;
         new Handler().postDelayed(new Runnable() {
@@ -53,6 +58,8 @@ public class Stats_Adapter_Table {
         }, 2000);//Wait 2 seconds
     }
 
+    // Could be compared with .notifiedDataSetChange()
+    // the goal is the same => update our View
     public void UpdateRows(int position) {
         View rootView = ((Activity) context).getWindow().getDecorView().findViewById(android.R.id.content);
         TableLayout table = (TableLayout) rootView.findViewById(R.id.tblData);

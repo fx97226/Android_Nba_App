@@ -24,12 +24,15 @@ public class AsyncGetAll extends AsyncTask<String, Void, JSONObject> {
     @Override
     protected JSONObject doInBackground(String... strings) {
         final JSONObject[] response = {null};
-        Log.i("ASYNC", " DoInBackground");
+        // Basic Security to call correct URL in the API ( if typing error in the code )
         if (strings[0].equals("games") || strings[0].equals("teams") || strings[0].equals("players")) {
             SyncHttpClient client = new SyncHttpClient();
+            // Add our Key ( in clear)  for the API
+            // not safe if the API is private but here no problem
             client.addHeader("x-rapidapi-key", "987a652a7cmshb9247e1fe068886p1ef584jsn4df5ed246ff7");
             client.addHeader("x-rapidapi-host", "free-nba.p.rapidapi.com");
             String url = buildUrl(strings);
+            // Launch our request
             client.get(url, new JsonHttpResponseHandler() {
                 public void onSuccess(int statusCode, Header[] headers, JSONObject json) {
                     response[0] = json;
@@ -50,7 +53,6 @@ public class AsyncGetAll extends AsyncTask<String, Void, JSONObject> {
 
     @Override
     protected void onPostExecute(JSONObject jsonObject) {
-        Log.i("ASYNC", jsonObject.toString());
         try {
             JSONArray data = jsonObject.getJSONArray("data");
             if (data.length() == 0) {
